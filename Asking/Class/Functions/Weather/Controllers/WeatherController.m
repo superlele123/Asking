@@ -58,6 +58,7 @@
     self.thirdWeatherDesLabel.text=thirdDesc.weatherDes;
     //设置实时天气
     self.nowTempLabel.text=weatherModel.nowTemperature;
+    
     self.nowWeatherDesLabel.text=weatherModel.cityName;
 
 
