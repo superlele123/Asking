@@ -1,0 +1,57 @@
+//
+//  Asking.pch
+//  Asking
+//
+//  Created by Lves Li on 14/11/21.
+//  Copyright (c) 2014年 Lves. All rights reserved.
+//
+
+#ifndef Asking_Asking_pch
+#define Asking_Asking_pch
+
+
+
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import <CoreLocation/CoreLocation.h>
+#import <AVFoundation/AVFoundation.h>
+
+
+//科大讯飞
+#import "iflyMSC/IFlySpeechUtility.h"
+#import "iflyMSC/IFlySpeechUnderstander.h"
+#import "iflyMSC/IFlySpeechConstant.h"
+
+
+//AFNetWorking
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "AFNetworking.h"
+
+//SDWebImage
+#import "UIImageView+WebCache.h"
+
+
+
+
+
+//获取屏幕 宽度、高度
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+
+#define kChatBackColor [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_gray@2x.png"]]
+
+//HomeController
+#define kBtnSize 65.f
+#define kActivityViewH kScreenHeight
+#define kCancelBtnSize 40.f
+#define kpadding 10.f
+#define kBtnSpeechSize 80.f
+//FunctionCell.h 
+#define kCellMargin 10.f
+#define kLineColor [UIColor colorWithRed:219/255.f green:219/255.f blue:219/255.f alpha:1.f]
+
+
+#endif
