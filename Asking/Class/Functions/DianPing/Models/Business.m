@@ -38,22 +38,22 @@
         self.online_reservation_url=dic[@"online_reservation_url"];
         self.coupon_url=dic[@"coupon_url"];
         self.coupon_description=dic[@"coupon_description"];
-        self.avg_price=[dic[@"avg_price"] integerValue];
-        self.review_count=[dic[@"review_count"] integerValue];
+        self.avg_price=[dic[@"avg_price"] intValue];
+        self.review_count=[dic[@"review_count"] intValue];
         self.review_list_url=dic[@"review_list_url"];
-        self.distance=[dic[@"distance"] integerValue];
+        self.distance=[dic[@"distance"] intValue];
         self.business_url=dic[@"business_url"];
         self.photo_url=dic[@"photo_url"];
         self.s_photo_url=dic[@"s_photo_url"];
-        self.photo_count=[dic[@"photo_count"] integerValue];
+        self.photo_count=[dic[@"photo_count"] intValue];
         self.photo_list_url=dic[@"photo_list_url"];
         
-        self.has_coupon=[dic[@"has_coupon"] integerValue];
-        self.coupon_id=[dic[@"coupon_id"] integerValue];
-        self.business_id=[dic[@"business_id"] integerValue];
-        self.has_online_reservation=[dic[@"has_online_reservation"] integerValue];
-        self.has_deal=[dic[@"has_deal"] integerValue];
-        self.deal_count=[dic[@"deal_count"] integerValue];
+        self.has_coupon=[dic[@"has_coupon"] intValue];
+        self.coupon_id=[dic[@"coupon_id"] intValue];
+        self.business_id=[dic[@"business_id"] intValue];
+        self.has_online_reservation=[dic[@"has_online_reservation"] intValue];
+        self.has_deal=[dic[@"has_deal"] intValue];
+        self.deal_count=[dic[@"deal_count"] intValue];
         self.regions=dic[@"regions"];
         
         //团购列表

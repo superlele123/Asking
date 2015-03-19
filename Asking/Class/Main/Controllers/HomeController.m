@@ -27,6 +27,8 @@
 #import "DianPingListController.h"
 #import "BusinessDetailController.h"
 #import "WeatherController.h"
+#import "AddressBookTool.h"
+
 
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
@@ -83,7 +85,7 @@ typedef enum {
     [self initAudioFile];
     //3. 初始化UI
     [self buildUI];
-    //
+    //4. 初始化语音播放器
     [self buildAudioManager];
     
     
@@ -617,8 +619,30 @@ typedef enum {
             }else if (functionModel.type==FunctionModelTelephone){  //打电话
                 NSLog(@"%@",functionModel.telephoneModel.name);
                 
-                NSString *phoneNumber = [@"tel://" stringByAppendingString:@"18911967951"];
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+                NSString *personName=functionModel.telephoneModel.name;
+                
+                if(personName.length>0){
+                    //获得电话
+                    [AddressBookTool getPhonesByName:nil Success:^(NSArray *contacts) {
+                        //返回结果不为空
+                        if (contacts.count>0) {
+                            //默认选择第一个匹配的人名 。。。。
+                            NSDictionary *person=contacts.firstObject;
+                            //获得其电话数组
+                            NSArray *phones=person[personName];
+                            if (phones.count>0) {
+                                //默认打第一个人的第一个电话
+                                NSString *phoneNumber = [@"tel://" stringByAppendingString:phones.firstObject];
+                                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+                            }
+                            
+                            
+                        }
+                    } andFailure:^(NSError *error) {
+                    
+                    }];
+                
+                }
             
             }
             
