@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>互联网</key>
+	<string>http://rss.sina.com.cn/blog/tech/kj.xml</string>
+	<key>体育</key>
+	<string>http://rss.sina.com.cn/news/allnews/sports.xml</string>
+	<key>军事</key>
+	<string>http://rss.sina.com.cn/roll/mil/hot_roll.xml</string>
+	<key>国内新闻</key>
+	<string>http://rss.sina.com.cn/news/china/focus15.xml</string>
+	<key>国际新闻</key>
+	<string>http://rss.sina.com.cn/news/world/focus15.xml</string>
+	<key>奇闻轶事</key>
+	<string>http://rss.sina.com.cn/news/society/wonder15.xml</string>
+	<key>新闻要闻</key>
+	<string>http://rss.sina.com.cn/news/marquee/ddt.xml</string>
+	<key>科技</key>
+	<string>http://rss.sina.com.cn/news/allnews/tech.xml</string>
+</dict>
+</plist>

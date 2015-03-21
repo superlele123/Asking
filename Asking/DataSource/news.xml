@@ -1,0 +1,177 @@
+
+<opml version="1.0">
+	<head>
+	<title>all-新浪rss</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+</head>
+	<body>
+	<outline title="新闻中心-新浪RSS" text="新闻中心-新浪RSS"><outline text="新闻要闻" title="新闻要闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/marquee/ddt.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="国内要闻" title="国内要闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/china/focus15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="国际要闻" title="国际要闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/world/focus15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="社会新闻" title="社会新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/society/focus15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="时政要闻" title="时政要闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/china/politics15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="港澳台新闻" title="港澳台新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/china/hktaiwan15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="社会与法" title="社会与法" type="rss" xmlUrl="http://rss.sina.com.cn/news/society/law15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="社会万象" title="社会万象" type="rss" xmlUrl="http://rss.sina.com.cn/news/society/misc15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="真情时刻" title="真情时刻" type="rss" xmlUrl="http://rss.sina.com.cn/news/society/feeling15.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="奇闻轶事" title="奇闻轶事" type="rss" xmlUrl="http://rss.sina.com.cn/news/society/wonder15.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="博客频道-新浪RSS" text="博客频道-新浪RSS"><outline text="文化" title="文化" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/cul.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="独家" title="独家" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/exc.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="情感" title="情感" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/feel.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="八卦" title="八卦" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/ent.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="生活纪录" title="生活纪录" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/enjoy.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="观点" title="观点" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/other.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="财经" title="财经" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/finance.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="股票" title="股票" type="rss" xmlUrl="http://rss.sina.com.cn/blog/index/stocks.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="娱乐" title="娱乐" type="rss" xmlUrl="http://rss.sina.com.cn/blog/ent/yl.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="女性" title="女性" type="rss" xmlUrl="http://rss.sina.com.cn/blog/eladies/nx.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="IT" title="IT" type="rss" xmlUrl="http://rss.sina.com.cn/blog/tech/kj.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="房产" title="房产" type="rss" xmlUrl="http://rss.sina.com.cn/blog/house/fc.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="教育" title="教育" type="rss" xmlUrl="http://rss.sina.com.cn/blog/edu/jy.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="星座" title="星座" type="rss" xmlUrl="http://rss.sina.com.cn/blog/astro/xz.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="汽车" title="汽车" type="rss" xmlUrl="http://rss.sina.com.cn/blog/auto/qc.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="游戏" title="游戏" type="rss" xmlUrl="http://rss.sina.com.cn/blog/games/yx.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="体育" title="体育" type="rss" xmlUrl="http://rss.sina.com.cn/blog/sports/ty.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="美食" title="美食" type="rss" xmlUrl="http://rss.sina.com.cn/blog/food/ms.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="家居" title="家居" type="rss" xmlUrl="http://rss.sina.com.cn/blog/decor/jiaju.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="育儿" title="育儿" type="rss" xmlUrl="http://rss.sina.com.cn/blog/baby/ye.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="健康" title="健康" type="rss" xmlUrl="http://rss.sina.com.cn/blog/news/jk.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="军事" title="军事" type="rss" xmlUrl="http://rss.sina.com.cn/blog/mini/js.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="体育频道-新浪RSS" text="体育频道-新浪RSS"><outline text="体育要闻汇总" title="体育要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/roll/sports/hot_roll.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/sports.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="国际足坛" title="国际足坛" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/focus.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="意甲" title="意甲" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/italy.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="英超" title="英超" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/england.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="西甲" title="西甲" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/spain.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="德甲、法甲" title="德甲、法甲" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/germanyfrance.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="五洲热报" title="五洲热报" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/others.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="精彩图片" title="精彩图片" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/photo.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="国内足坛" title="国内足坛" type="rss" xmlUrl="http://rss.sina.com.cn/sports/china/focus.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="中国之队" title="中国之队" type="rss" xmlUrl="http://rss.sina.com.cn/sports/china/team.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="篮球新闻" title="篮球新闻" type="rss" xmlUrl="http://rss.sina.com.cn/sports/basketball/focus.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="NBA新闻" title="NBA新闻" type="rss" xmlUrl="http://rss.sina.com.cn/sports/basketball/nba.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="CBA新闻" title="CBA新闻" type="rss" xmlUrl="http://rss.sina.com.cn/sports/basketball/cba.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="综合体育" title="综合体育" type="rss" xmlUrl="http://rss.sina.com.cn/sports/others/focus.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="彩票新闻" title="彩票新闻" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/lottery.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="高尔夫新闻" title="高尔夫新闻" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/golf.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="F1赛车新闻" title="F1赛车新闻" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/f1.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="棋牌新闻" title="棋牌新闻" type="rss" xmlUrl="http://rss.sina.com.cn/sports/global/chess.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="科技频道-新浪RSS" text="科技频道-新浪RSS"><outline text="科技要闻汇总" title="科技要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/tech/rollnews.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/tech.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="互联网新闻" title="互联网新闻" type="rss" xmlUrl="http://rss.sina.com.cn/tech/internet/home28.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="手机资讯" title="手机资讯" type="rss" xmlUrl="http://rss.sina.com.cn/tech/mobile/mobile_6.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="3G新闻" title="3G新闻" type="rss" xmlUrl="http://rss.sina.com.cn/tech/3G/guonei.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="笔记本新闻" title="笔记本新闻" type="rss" xmlUrl="http://rss.sina.com.cn/tech/notebook/193_1.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="电信新闻" title="电信新闻" type="rss" xmlUrl="http://rss.sina.com.cn/tech/tele/gn37.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="业界新闻" title="业界新闻" type="rss" xmlUrl="http://rss.sina.com.cn/tech/it/gn37.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="科技下载" title="科技下载" type="rss" xmlUrl="http://rss.sina.com.cn/tech/down/down20.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="科普要闻" title="科普要闻" type="rss" xmlUrl="http://rss.sina.com.cn/tech/discovery/discovery.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="数码资讯" title="数码资讯" type="rss" xmlUrl="http://rss.sina.com.cn/tech/number/new_camera.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="家电资讯" title="家电资讯" type="rss" xmlUrl="http://rss.sina.com.cn/tech/elec/buy_elec.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="财经频道-新浪RSS" text="财经频道-新浪RSS"><outline text="财经要闻汇总" title="财经要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/roll/finance/hot_roll.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/finance.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="股市及时雨" title="股市及时雨" type="rss" xmlUrl="http://rss.sina.com.cn/finance/jsy.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="股票要闻汇总" title="股票要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/roll/stock/hot_roll.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="基金要闻" title="基金要闻" type="rss" xmlUrl="http://rss.sina.com.cn/finance/fund.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="理财要闻" title="理财要闻" type="rss" xmlUrl="http://rss.sina.com.cn/finance/financial.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="美股快报" title="美股快报" type="rss" xmlUrl="http://rss.sina.com.cn/finance/usstock.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="港股快讯" title="港股快讯" type="rss" xmlUrl="http://rss.sina.com.cn/finance/hkstock.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="期货要闻" title="期货要闻" type="rss" xmlUrl="http://rss.sina.com.cn/finance/future.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="视频-新浪RSS" text="视频-新浪RSS"><outline text="影视MV" title="影视MV" type="rss" xmlUrl="http://rss.sina.com.cn/bn/MV.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="新闻视频排行" title="新闻视频排行" type="rss" xmlUrl="http://rss.sina.com.cn/bn/hot_bn.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="新闻" title="新闻" type="rss" xmlUrl="http://rss.sina.com.cn/bn/news.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="科技" title="科技" type="rss" xmlUrl="http://rss.sina.com.cn/bn/tech.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="财经" title="财经" type="rss" xmlUrl="http://rss.sina.com.cn/bn/finance.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="体育" title="体育" type="rss" xmlUrl="http://rss.sina.com.cn/bn/sports.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="娱乐" title="娱乐" type="rss" xmlUrl="http://rss.sina.com.cn/bn/ent.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="女性" title="女性" type="rss" xmlUrl="http://rss.sina.com.cn/bn/eladies.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="影视MV热播排行视频" title="影视MV热播排行视频" type="rss" xmlUrl="http://movie.video.sina.com.cn/rss/TOP.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="影视MV热评排行视频" title="影视MV热评排行视频" type="rss" xmlUrl="http://movie.video.sina.com.cn/rss/COMMENT.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="影视MV最新视频" title="影视MV最新视频" type="rss" xmlUrl="http://movie.video.sina.com.cn/rss/NEW.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="影音娱乐-新浪RSS" text="影音娱乐-新浪RSS"><outline text="娱乐要闻汇总" title="娱乐要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/ent/hot_roll.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/ent.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="音乐" title="音乐" type="rss" xmlUrl="http://rss.sina.com.cn/ent/music/focus12.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="电视前沿" title="电视前沿" type="rss" xmlUrl="http://rss.sina.com.cn/ent/tv/focus7.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="电影宝库" title="电影宝库" type="rss" xmlUrl="http://rss.sina.com.cn/ent/film/focus7.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="明星全接触" title="明星全接触" type="rss" xmlUrl="http://rss.sina.com.cn/ent/star/focus7.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="内地明星" title="内地明星" type="rss" xmlUrl="http://rss.sina.com.cn/ent/inner.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="港台明星" title="港台明星" type="rss" xmlUrl="http://rss.sina.com.cn/ent/hongkong.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="日韩明星" title="日韩明星" type="rss" xmlUrl="http://rss.sina.com.cn/ent/star/japan.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="欧美明星" title="欧美明星" type="rss" xmlUrl="http://rss.sina.com.cn/ent/star/outer.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="读书频道-新浪RSS" text="读书频道-新浪RSS"><outline text="读书要闻汇总" title="读书要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/book/info.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="最新连载" title="最新连载" type="rss" xmlUrl="http://rss.sina.com.cn/book/new_book.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="图书总排行" title="图书总排行" type="rss" xmlUrl="http://rss.sina.com.cn/book/total_rank.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="小说排行榜" title="小说排行榜" type="rss" xmlUrl="http://rss.sina.com.cn/book/story_rank.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="人文历史排行榜" title="人文历史排行榜" type="rss" xmlUrl="http://rss.sina.com.cn/book/history_rank.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="青春校园排行榜" title="青春校园排行榜" type="rss" xmlUrl="http://rss.sina.com.cn/book/school_rank.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="生活娱乐排行榜" title="生活娱乐排行榜" type="rss" xmlUrl="http://rss.sina.com.cn/book/life_rank.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="读书财经排行榜" title="读书财经排行榜" type="rss" xmlUrl="http://rss.sina.com.cn/book/finance_rank.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="读书军事排行榜" title="读书军事排行榜" type="rss" xmlUrl="http://rss.sina.com.cn/book/military_rank.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="女性频道-新浪RSS" text="女性频道-新浪RSS"><outline text="女性要闻汇总" title="女性要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/eladies.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="美容美发" title="美容美发" type="rss" xmlUrl="http://rss.sina.com.cn/eladies/gnspxw.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="服饰潮流" title="服饰潮流" type="rss" xmlUrl="http://rss.sina.com.cn/eladies/fashion.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="美体瘦身" title="美体瘦身" type="rss" xmlUrl="http://rss.sina.com.cn/eladies/body.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="情感婚姻" title="情感婚姻" type="rss" xmlUrl="http://rss.sina.com.cn/eladies/marry.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="八卦" title="八卦" type="rss" xmlUrl="http://rss.sina.com.cn/eladies/gossip.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="亲子" title="亲子" type="rss" xmlUrl="http://rss.sina.com.cn/eladies/son.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="男性频道-新浪RSS" text="男性频道-新浪RSS"><outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/man.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="男人情感" title="男人情感" type="rss" xmlUrl="http://rss.sina.com.cn/man/feeling.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="男装潮流" title="男装潮流" type="rss" xmlUrl="http://rss.sina.com.cn/man/fashion.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="军事频道-新浪RSS" text="军事频道-新浪RSS"><outline text="军事要闻汇总" title="军事要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/roll/mil/hot_roll.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/jczs/focus.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="国际军情" title="国际军情" type="rss" xmlUrl="http://rss.sina.com.cn/jczs/taiwan20.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="中国军情" title="中国军情" type="rss" xmlUrl="http://rss.sina.com.cn/jczs/china15.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="汽车新闻-新浪RSS" text="汽车新闻-新浪RSS"><outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/auto.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="行业动态" title="行业动态" type="rss" xmlUrl="http://rss.sina.com.cn/auto/news/t/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="购车指导" title="购车指导" type="rss" xmlUrl="http://rss.sina.com.cn/auto/guide/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="新车上市" title="新车上市" type="rss" xmlUrl="http://rss.sina.com.cn/auto/newcar/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="车市·降价" title="车市·降价" type="rss" xmlUrl="http://rss.sina.com.cn/auto/sales/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="企业新闻" title="企业新闻" type="rss" xmlUrl="http://rss.sina.com.cn/auto/news/e/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="汽车养护" title="汽车养护" type="rss" xmlUrl="http://rss.sina.com.cn/auto/servicing/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="汽车召回" title="汽车召回" type="rss" xmlUrl="http://rss.sina.com.cn/auto/recalls/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="汽车保险" title="汽车保险" type="rss" xmlUrl="http://rss.sina.com.cn/auto/insurance/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="汽车配件" title="汽车配件" type="rss" xmlUrl="http://rss.sina.com.cn/auto/parts/news/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="汽车用品" title="汽车用品" type="rss" xmlUrl="http://rss.sina.com.cn/auto/automotive/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="改装" title="改装" type="rss" xmlUrl="http://rss.sina.com.cn/auto/ultratune/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="汽车轮胎" title="汽车轮胎" type="rss" xmlUrl="http://rss.sina.com.cn/auto/tire/index.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="交通" title="交通" type="rss" xmlUrl="http://rss.sina.com.cn/auto/traffic/index.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="教育频道-新浪RSS" text="教育频道-新浪RSS"><outline text="教育要闻汇总" title="教育要闻汇总" type="rss" xmlUrl="http://rss.sina.com.cn/roll/edu/hot_roll.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/edu/focus19.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="考试频道" title="考试频道" type="rss" xmlUrl="http://rss.sina.com.cn/edu/exam.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="高考" title="高考" type="rss" xmlUrl="http://rss.sina.com.cn/edu/gaokao.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="外语频道" title="外语频道" type="rss" xmlUrl="http://rss.sina.com.cn/edu/en.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="考研" title="考研" type="rss" xmlUrl="http://rss.sina.com.cn/edu/kaoyan.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="自考" title="自考" type="rss" xmlUrl="http://rss.sina.com.cn/edu/zikao.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="成考" title="成考" type="rss" xmlUrl="http://rss.sina.com.cn/edu/chengkao.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="中考" title="中考" type="rss" xmlUrl="http://rss.sina.com.cn/edu/zhongkao.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="英语考试" title="英语考试" type="rss" xmlUrl="http://rss.sina.com.cn/edu/yyks.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="司法考试" title="司法考试" type="rss" xmlUrl="http://rss.sina.com.cn/edu/sifa.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="会计考试" title="会计考试" type="rss" xmlUrl="http://rss.sina.com.cn/edu/cpa.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="出国" title="出国" type="rss" xmlUrl="http://rss.sina.com.cn/edu/abroad5.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="房地产-新浪RSS" text="房地产-新浪RSS"><outline text="北京房产－楼市活动" title="北京房产－楼市活动" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/scan/huodong.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－新盘汇总" title="北京房产－新盘汇总" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/scan/xinpan.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－开盘信息" title="北京房产－开盘信息" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/scan/kaipan.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－打折优惠" title="北京房产－打折优惠" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/scan/dazhe.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－购房指导" title="北京房产－购房指导" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/scan/daogou.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－地产人物" title="北京房产－地产人物" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/dcrw.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－房产企业" title="北京房产－房产企业" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/fcqy.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－地产评论" title="北京房产－地产评论" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/dcpl.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－地产访谈" title="北京房产－地产访谈" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/dcft.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="北京房产－地产新闻" title="北京房产－地产新闻" type="rss" xmlUrl="http://rss.sina.com.cn/bjhouse/dcnews.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="家居－家居新闻" title="家居－家居新闻" type="rss" xmlUrl="http://rss.sina.com.cn/jiaju/news.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="家居－家饰生活" title="家居－家饰生活" type="rss" xmlUrl="http://rss.sina.com.cn/jiaju/ornament.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="家居－设计风尚" title="家居－设计风尚" type="rss" xmlUrl="http://rss.sina.com.cn/jiaju/design.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="游戏频道-新浪RSS" text="游戏频道-新浪RSS"><outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/games.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="电子竞技" title="电子竞技" type="rss" xmlUrl="http://rss.sina.com.cn/games/dzjj.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="网络游戏新闻" title="网络游戏新闻" type="rss" xmlUrl="http://rss.sina.com.cn/games/wlyx.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="单机游戏新闻" title="单机游戏新闻" type="rss" xmlUrl="http://rss.sina.com.cn/games/djyx.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="游戏产业新闻" title="游戏产业新闻" type="rss" xmlUrl="http://rss.sina.com.cn/games/cyxw.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="电视游戏新闻" title="电视游戏新闻" type="rss" xmlUrl="http://rss.sina.com.cn/games/dsyx.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="手机游戏新闻" title="手机游戏新闻" type="rss" xmlUrl="http://rss.sina.com.cn/games/sjyx.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="迷你游戏" title="迷你游戏" type="rss" xmlUrl="http://rss.sina.com.cn/games/littlegame.xml" htmlUrl="www.sina.com.cn"/>
+		</outline><outline title="星座频道-新浪RSS" text="星座频道-新浪RSS"><outline text="焦点新闻" title="焦点新闻" type="rss" xmlUrl="http://rss.sina.com.cn/news/allnews/astro.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="星座时尚热点" title="星座时尚热点" type="rss" xmlUrl="http://rss.sina.com.cn/astro/fashion.xml" htmlUrl="www.sina.com.cn"/>
+		<outline text="星座热文总排行" title="星座热文总排行" type="rss" xmlUrl="http://rss.sina.com.cn/astro/hot.xml" htmlUrl="www.sina.com.cn"/>
+		</outline>
+	</body>
+	</opml>

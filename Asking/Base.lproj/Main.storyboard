@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfx-ws-i4q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfx-ws-i4q">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -662,6 +662,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGj-YC-q0P" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554" y="692"/>
+        </scene>
+        <!--News Main Controller-->
+        <scene sceneID="eun-ci-RqI">
+            <objects>
+                <collectionViewController storyboardIdentifier="NewsMainController" id="kI5-yI-R9c" customClass="NewsMainController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="KAz-aO-0iJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L73-wb-62D">
+                            <size key="itemSize" width="130" height="130"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="JwP-VP-YiS" customClass="NewsCollectionCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8P-0R-czS">
+                                            <rect key="frame" x="0.0" y="40" width="130" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="70x-Xd-dHh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.92941182850000004" green="0.71764707569999997" blue="0.7019608021" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="c8P-0R-czS" firstAttribute="leading" secondItem="JwP-VP-YiS" secondAttribute="leading" id="Lto-rn-Bt8"/>
+                                    <constraint firstAttribute="centerX" secondItem="c8P-0R-czS" secondAttribute="centerX" id="SxZ-1K-2xl"/>
+                                    <constraint firstAttribute="centerY" secondItem="c8P-0R-czS" secondAttribute="centerY" id="VZl-oC-l5f"/>
+                                    <constraint firstAttribute="trailing" secondItem="c8P-0R-czS" secondAttribute="trailing" id="cBy-E8-M0F"/>
+                                </constraints>
+                                <size key="customSize" width="130" height="130"/>
+                                <connections>
+                                    <outlet property="catogaryLabel" destination="c8P-0R-czS" id="EeG-a8-yvj"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="kI5-yI-R9c" id="LCf-tg-cfu"/>
+                            <outlet property="delegate" destination="kI5-yI-R9c" id="fJx-SZ-aCS"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Tbl-NK-pJr"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8P-YH-jqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526" y="-289"/>
         </scene>
     </scenes>
     <resources>

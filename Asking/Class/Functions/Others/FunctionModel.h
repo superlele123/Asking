@@ -24,7 +24,8 @@ typedef enum {
     FunctionTypeMap,
     FunctionTypeDianPing,
     FunctionTypeMusic,
-    FunctionModelTelephone///电话
+    FunctionTypeTelephone,///电话
+    FunctionTypeNews,
 }FunctionType;
 
 

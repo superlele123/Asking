@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Asking/Class/Speech/Tools/SpeechParseEngine.m"
-            timestampString = "448160974.292578"
+            timestampString = "448597327.375646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-parseRestaurant:"
             landmarkType = "5">
          </BreakpointContent>
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Asking/Class/Main/Controllers/HomeController.m"
-            timestampString = "448449029.213056"
+            filePath = "Asking/Class/Speech/Tools/SpeechParseEngine.m"
+            timestampString = "448596621.256498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "623"
-            endingLineNumber = "623"
-            landmarkName = "-parseVoice:"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-parseSpeechByDictionary:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

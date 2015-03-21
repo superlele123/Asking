@@ -28,6 +28,7 @@
 #import "BusinessDetailController.h"
 #import "WeatherController.h"
 #import "AddressBookTool.h"
+#import "NewsMainController.h"
 
 
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
@@ -476,7 +477,6 @@ typedef enum {
             UIStoryboard *mainStoryBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
             WeatherController *weatherController =   [mainStoryBoard instantiateViewControllerWithIdentifier:@"WeatherController"];
             weatherController.weatherModel=funModel.weatherModel;
-        
             [self.navigationController pushViewController:weatherController animated:YES];
         }
     }
@@ -505,15 +505,25 @@ typedef enum {
         }
         
         NSDictionary *json = [keyString JSONValue];
-        
+        //判断语音类型
         NSString *service= json[@"service"];
         
         if (service==nil||[service isEqualToString:@"openQA"]) {
+            
+            NSString *text=json[@"text"];
+            NSRange newsRange=[text rangeOfString:@"新闻"];
+            if (newsRange.length>0) {
+                self.title=text;
+                UIStoryboard *mainStoryBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                MusicController *newsController =   [mainStoryBoard instantiateViewControllerWithIdentifier:@"NewsMainController"];
+                [self.navigationController pushViewController:newsController animated:YES];
+                return;
+            }
             //1. 显示语音信息
             MessageModel *newModel=[[MessageModel alloc] init];
             newModel.type=MessageBodyType_Text;
             newModel.isSender=YES;
-            newModel.content=json[@"text"];
+            newModel.content=text;
             [_dataArray addObject:newModel];
             [_mainTableView reloadData];
             //1.1 滚动到底部
@@ -525,12 +535,6 @@ typedef enum {
             self.title=json[@"text"];
             [self parseVoice:json];
         }
-        
-       
-        
-        
-        
-        
     }
     
 }
@@ -616,14 +620,14 @@ typedef enum {
                 }];
                 return;
 
-            }else if (functionModel.type==FunctionModelTelephone){  //打电话
+            }else if (functionModel.type==FunctionTypeTelephone){  //打电话
                 NSLog(@"%@",functionModel.telephoneModel.name);
                 
                 NSString *personName=functionModel.telephoneModel.name;
                 
                 if(personName.length>0){
                     //获得电话
-                    [AddressBookTool getPhonesByName:nil Success:^(NSArray *contacts) {
+                    [AddressBookTool getPhonesByName:personName Success:^(NSArray *contacts) {
                         //返回结果不为空
                         if (contacts.count>0) {
                             //默认选择第一个匹配的人名 。。。。
@@ -635,7 +639,6 @@ typedef enum {
                                 NSString *phoneNumber = [@"tel://" stringByAppendingString:phones.firstObject];
                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
                             }
-                            
                             
                         }
                     } andFailure:^(NSError *error) {

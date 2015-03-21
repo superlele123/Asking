@@ -29,8 +29,9 @@
         model=[self parseRestaurant:dic];
     }else if ([@"telephone" isEqualToString:service]){
         model=[self parseTelePhone:dic];
-    }
-    else{
+    }else if ([@"news" isEqualToString:service]){
+        model=[self parseNews:dic];
+    }else{
         return nil;
     }
 
@@ -54,11 +55,18 @@
 
     return newModel;
 }
+#pragma mark 新闻
+-(FunctionModel *)parseNews:(NSDictionary *)dic{
+    FunctionModel *resultModel=[[FunctionModel alloc] init];
+    resultModel.type=FunctionTypeNews;
+    return resultModel;
+}
+
 #pragma mark 打电话
 -(FunctionModel *)parseTelePhone:(NSDictionary *)dic{
     NSString *name=dic[@"semantic"][@"slots"][@"name"];
     FunctionModel *resultModel=[[FunctionModel alloc] init];
-    resultModel.type=FunctionModelTelephone;
+    resultModel.type=FunctionTypeTelephone;
     
     TelephoneModel *telephoneModel=[[TelephoneModel alloc] init];
     telephoneModel.name=name;

@@ -264,7 +264,17 @@
 		88A1D83A1A750B8E0007B7BD /* weather_cardtip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A1D8371A750B8E0007B7BD /* weather_cardtip@3x.png */; };
 		88A1D83B1A750B8E0007B7BD /* weathercolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A1D8381A750B8E0007B7BD /* weathercolor.png */; };
 		88A1D83C1A750B8E0007B7BD /* weather_cardtip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A1D8391A750B8E0007B7BD /* weather_cardtip@2x.png */; };
+		88A4E2E91ABD0ABC001B5F8E /* NewsMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2DB1ABD0ABB001B5F8E /* NewsMainController.m */; };
+		88A4E2EA1ABD0ABC001B5F8E /* NewsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2DD1ABD0ABB001B5F8E /* NewsTableController.m */; };
+		88A4E2EB1ABD0ABC001B5F8E /* NewsWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2DF1ABD0ABB001B5F8E /* NewsWebController.m */; };
+		88A4E2EC1ABD0ABC001B5F8E /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2E21ABD0ABB001B5F8E /* News.m */; };
+		88A4E2ED1ABD0ABC001B5F8E /* NewsTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2E51ABD0ABB001B5F8E /* NewsTools.m */; };
+		88A4E2EE1ABD0ABC001B5F8E /* NewsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2E81ABD0ABB001B5F8E /* NewsCollectionCell.m */; };
+		88A4E2F01ABD0AD6001B5F8E /* news.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88A4E2EF1ABD0AD6001B5F8E /* news.plist */; };
+		88A4E2F71ABD0AFC001B5F8E /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2F31ABD0AFC001B5F8E /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		88A4E2FA1ABD0B18001B5F8E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A4E2F91ABD0B18001B5F8E /* libxml2.dylib */; };
 		88C3558E1ABAC30A0094A3E1 /* AddressBookTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C3558D1ABAC30A0094A3E1 /* AddressBookTool.m */; };
+		88C355901ABACCD20094A3E1 /* news.xml in Resources */ = {isa = PBXBuildFile; fileRef = 88C3558F1ABACCD20094A3E1 /* news.xml */; };
 		88D5D3761A1EDAB600DA036F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D5D3751A1EDAB600DA036F /* main.m */; };
 		88D5D3791A1EDAB600DA036F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D5D3781A1EDAB600DA036F /* AppDelegate.m */; };
 		88D5D37C1A1EDAB600DA036F /* Asking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88D5D37A1A1EDAB600DA036F /* Asking.xcdatamodeld */; };
@@ -734,8 +744,25 @@
 		88A1D8371A750B8E0007B7BD /* weather_cardtip@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather_cardtip@3x.png"; sourceTree = "<group>"; };
 		88A1D8381A750B8E0007B7BD /* weathercolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weathercolor.png; sourceTree = "<group>"; };
 		88A1D8391A750B8E0007B7BD /* weather_cardtip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather_cardtip@2x.png"; sourceTree = "<group>"; };
+		88A4E2DA1ABD0ABB001B5F8E /* NewsMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsMainController.h; sourceTree = "<group>"; };
+		88A4E2DB1ABD0ABB001B5F8E /* NewsMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsMainController.m; sourceTree = "<group>"; };
+		88A4E2DC1ABD0ABB001B5F8E /* NewsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableController.h; sourceTree = "<group>"; };
+		88A4E2DD1ABD0ABB001B5F8E /* NewsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableController.m; sourceTree = "<group>"; };
+		88A4E2DE1ABD0ABB001B5F8E /* NewsWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebController.h; sourceTree = "<group>"; };
+		88A4E2DF1ABD0ABB001B5F8E /* NewsWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebController.m; sourceTree = "<group>"; };
+		88A4E2E11ABD0ABB001B5F8E /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		88A4E2E21ABD0ABB001B5F8E /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		88A4E2E41ABD0ABB001B5F8E /* NewsTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTools.h; sourceTree = "<group>"; };
+		88A4E2E51ABD0ABB001B5F8E /* NewsTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTools.m; sourceTree = "<group>"; };
+		88A4E2E71ABD0ABB001B5F8E /* NewsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCollectionCell.h; sourceTree = "<group>"; };
+		88A4E2E81ABD0ABB001B5F8E /* NewsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCollectionCell.m; sourceTree = "<group>"; };
+		88A4E2EF1ABD0AD6001B5F8E /* news.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = news.plist; sourceTree = "<group>"; };
+		88A4E2F21ABD0AFC001B5F8E /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		88A4E2F31ABD0AFC001B5F8E /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		88A4E2F91ABD0B18001B5F8E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		88C3558C1ABAC30A0094A3E1 /* AddressBookTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookTool.h; sourceTree = "<group>"; };
 		88C3558D1ABAC30A0094A3E1 /* AddressBookTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookTool.m; sourceTree = "<group>"; };
+		88C3558F1ABACCD20094A3E1 /* news.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = news.xml; sourceTree = "<group>"; };
 		88D5D3701A1EDAB600DA036F /* Asking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D5D3741A1EDAB600DA036F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88D5D3751A1EDAB600DA036F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -974,6 +1001,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A4E2FA1ABD0B18001B5F8E /* libxml2.dylib in Frameworks */,
 				88A1D7521A74D8100007B7BD /* AdSupport.framework in Frameworks */,
 				88A1D7501A74D8020007B7BD /* Security.framework in Frameworks */,
 				88A1D74E1A74D7F30007B7BD /* libstdc++.6.0.9.dylib in Frameworks */,
@@ -1397,6 +1425,66 @@
 			path = Card;
 			sourceTree = "<group>";
 		};
+		88A4E2D81ABD0ABB001B5F8E /* News */ = {
+			isa = PBXGroup;
+			children = (
+				88A4E2D91ABD0ABB001B5F8E /* Controllers */,
+				88A4E2E01ABD0ABB001B5F8E /* Models */,
+				88A4E2E31ABD0ABB001B5F8E /* Tools */,
+				88A4E2E61ABD0ABB001B5F8E /* Views */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		88A4E2D91ABD0ABB001B5F8E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88A4E2DA1ABD0ABB001B5F8E /* NewsMainController.h */,
+				88A4E2DB1ABD0ABB001B5F8E /* NewsMainController.m */,
+				88A4E2DC1ABD0ABB001B5F8E /* NewsTableController.h */,
+				88A4E2DD1ABD0ABB001B5F8E /* NewsTableController.m */,
+				88A4E2DE1ABD0ABB001B5F8E /* NewsWebController.h */,
+				88A4E2DF1ABD0ABB001B5F8E /* NewsWebController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		88A4E2E01ABD0ABB001B5F8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88A4E2E11ABD0ABB001B5F8E /* News.h */,
+				88A4E2E21ABD0ABB001B5F8E /* News.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88A4E2E31ABD0ABB001B5F8E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				88A4E2E41ABD0ABB001B5F8E /* NewsTools.h */,
+				88A4E2E51ABD0ABB001B5F8E /* NewsTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		88A4E2E61ABD0ABB001B5F8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88A4E2E71ABD0ABB001B5F8E /* NewsCollectionCell.h */,
+				88A4E2E81ABD0ABB001B5F8E /* NewsCollectionCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88A4E2F11ABD0AFC001B5F8E /* GDataXML */ = {
+			isa = PBXGroup;
+			children = (
+				88A4E2F21ABD0AFC001B5F8E /* GDataXMLNode.h */,
+				88A4E2F31ABD0AFC001B5F8E /* GDataXMLNode.m */,
+			);
+			path = GDataXML;
+			sourceTree = "<group>";
+		};
 		88C3558B1ABAC30A0094A3E1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -1509,6 +1597,8 @@
 		88D5D3A21A1EE09700DA036F /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				88A4E2EF1ABD0AD6001B5F8E /* news.plist */,
+				88C3558F1ABACCD20094A3E1 /* news.xml */,
 				88A1D7441A74D76B0007B7BD /* Others */,
 				88D5D3A31A1EE09700DA036F /* Images */,
 				88D5D3B71A1EE09700DA036F /* Sounds */,
@@ -1717,6 +1807,7 @@
 		88E07E6E1A1EF17C001B0F90 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				88A4E2F11ABD0AFC001B5F8E /* GDataXML */,
 				88F4255D1AA17AAC0042E90F /* SDWebImage */,
 				88F4257F1AA17AAD0042E90F /* StreamingKit */,
 				8806DDDD1A2F0B3D00D15D3A /* AFNetworking */,
@@ -1846,6 +1937,7 @@
 		88E07EB51A1EF26B001B0F90 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				88A4E2D81ABD0ABB001B5F8E /* News */,
 				884F95071AB6633700C510A3 /* Telephones */,
 				884C215E1A25BD46005AF9BB /* FunctionCell.h */,
 				884C215F1A25BD46005AF9BB /* FunctionCell.m */,
@@ -1924,6 +2016,7 @@
 		88E07EEA1A1EF46F001B0F90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88A4E2F91ABD0B18001B5F8E /* libxml2.dylib */,
 				88A1D7511A74D8100007B7BD /* AdSupport.framework */,
 				88A1D74F1A74D8020007B7BD /* Security.framework */,
 				88A1D74D1A74D7F30007B7BD /* libstdc++.6.0.9.dylib */,
@@ -2384,6 +2477,7 @@
 				88A1D8141A74DA400007B7BD /* map_route_turn_right_back@2x.png in Resources */,
 				88E07E511A1EF0A6001B0F90 /* ReceiverVoiceNodePlaying000@2x.png in Resources */,
 				88E07E4F1A1EF0A6001B0F90 /* mapbtn.png in Resources */,
+				88C355901ABACCD20094A3E1 /* news.xml in Resources */,
 				88D5D3CD1A1EE09700DA036F /* start.caf in Resources */,
 				88A1D7D41A74DA400007B7BD /* arrow@2x.png in Resources */,
 				8828E2561A764F5E00898B90 /* retina_sunning@2x.png in Resources */,
@@ -2447,6 +2541,7 @@
 				88D5D3C81A1EE09700DA036F /* vr_recognizes_voice_button4_bg3.png in Resources */,
 				8828E2431A764F5E00898B90 /* retina_fog.png in Resources */,
 				88A1D8041A74DA400007B7BD /* map_route_turn_back@2x.png in Resources */,
+				88A4E2F01ABD0AD6001B5F8E /* news.plist in Resources */,
 				88A1D7EB1A74DA400007B7BD /* icon_navibar_car_highlighted@2x.png in Resources */,
 				882724281AB7E28E0006E56D /* cloudy.png in Resources */,
 				88A1D7FC1A74DA400007B7BD /* default_path_pathinfo_sub_normal.png in Resources */,
@@ -2486,10 +2581,13 @@
 				8863F7111AA83FB9008C2D75 /* DianPingModel.m in Sources */,
 				88A1D76A1A74D9680007B7BD /* MapNaviDetailController.m in Sources */,
 				88F4255C1AA17A690042E90F /* MusicTools.m in Sources */,
+				88A4E2EE1ABD0ABC001B5F8E /* NewsCollectionCell.m in Sources */,
+				88A4E2ED1ABD0ABC001B5F8E /* NewsTools.m in Sources */,
 				8806DDFD1A2F0BB500D15D3A /* WeatherTools.m in Sources */,
 				88F425B01AA17AEF0042E90F /* UIColor+Inverse.m in Sources */,
 				884F950B1AB6634C00C510A3 /* TelephoneModel.m in Sources */,
 				88E07E951A1EF17C001B0F90 /* SBJsonStreamParserState.m in Sources */,
+				88A4E2EB1ABD0ABC001B5F8E /* NewsWebController.m in Sources */,
 				884C215A1A25BAA3005AF9BB /* CellContentBaseView.m in Sources */,
 				88A1D7801A74D9780007B7BD /* NaviDetailCell.m in Sources */,
 				88E07E911A1EF17C001B0F90 /* SBJsonParser.m in Sources */,
@@ -2529,8 +2627,10 @@
 				88E07E961A1EF17C001B0F90 /* SBJsonStreamWriter.m in Sources */,
 				88E07ECC1A1EF26B001B0F90 /* LvesChatBaseCell.m in Sources */,
 				8863F7251AA85F73008C2D75 /* DianPingDeal.m in Sources */,
+				88A4E2F71ABD0AFC001B5F8E /* GDataXMLNode.m in Sources */,
 				88A1D76C1A74D9680007B7BD /* LineDashPolyline.m in Sources */,
 				88E07EC81A1EF26B001B0F90 /* BubbleTextView.m in Sources */,
+				88A4E2EA1ABD0ABC001B5F8E /* NewsTableController.m in Sources */,
 				88F425931AA17AAD0042E90F /* MKAnnotationView+WebCache.m in Sources */,
 				884C21601A25BD46005AF9BB /* FunctionCell.m in Sources */,
 				88E07F091A1F37BD001B0F90 /* SpeechParseEngine.m in Sources */,
@@ -2554,6 +2654,8 @@
 				88E07E901A1EF17C001B0F90 /* NSObject+SBJson.m in Sources */,
 				88F454431AAA8F350072D044 /* BusinessDetailController.m in Sources */,
 				88A1D7821A74D9780007B7BD /* StartAnnotation.m in Sources */,
+				88A4E2EC1ABD0ABC001B5F8E /* News.m in Sources */,
+				88A4E2E91ABD0ABC001B5F8E /* NewsMainController.m in Sources */,
 				88D5D3761A1EDAB600DA036F /* main.m in Sources */,
 				88E07EC51A1EF26B001B0F90 /* MessageModel.m in Sources */,
 				88F425551AA17A240042E90F /* Song.m in Sources */,
@@ -2707,10 +2809,18 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Asking/Asking.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = Asking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2728,10 +2838,18 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Asking/Asking.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = Asking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
