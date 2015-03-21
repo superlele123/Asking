@@ -10,7 +10,8 @@
 
 
 @interface NewsTableController : UITableViewController
-
+///新闻分类
+@property (nonatomic,copy) NSString *category;
 ///数据源
 @property (nonatomic,strong) NSArray *dataSource;
 @end

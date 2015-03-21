@@ -20,6 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.title=@"新闻详情";
+    //设置按钮字体
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@"返回"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:nil];
+    self.navigationController.navigationBar.topItem.backBarButtonItem=btnBack;
+    
+    
+    
     UIWebView *webView=[[UIWebView alloc] initWithFrame:self.view.bounds];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
     webView.delegate=self;

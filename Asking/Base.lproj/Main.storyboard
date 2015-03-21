@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="848" y="346"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Lves Navigation Controller-->
         <scene sceneID="UkL-xT-NkV">
             <objects>
-                <navigationController id="hfx-ws-i4q" sceneMemberID="viewController">
+                <navigationController id="hfx-ws-i4q" customClass="LvesNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QRe-K2-mFD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

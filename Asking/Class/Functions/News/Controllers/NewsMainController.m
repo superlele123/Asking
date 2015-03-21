@@ -27,14 +27,30 @@ static NSString * const reuseIdentifier = @"CollectionCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+     self.title=@"新闻";
+    
+    //设置按钮字体
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@"返回"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(back:)];
+    self.navigationController.navigationBar.topItem.backBarButtonItem=btnBack;
+    
+    
+    //获得请求连接及类别
     NSString *newsPath=[[NSBundle mainBundle] pathForResource:@"news" ofType:@"plist"];
     NSDictionary *newsDictionary=[NSDictionary dictionaryWithContentsOfFile:newsPath];
     _dataSource=newsDictionary;
-    
+    //设置collectionView
     self.clearsSelectionOnViewWillAppear = NO;
     self.collectionView.backgroundColor=[UIColor whiteColor];
     
     
+}
+-(void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,6 +108,7 @@ static NSString * const reuseIdentifier = @"CollectionCell";
         [hud hide:YES];
         NewsTableController *newsListCon=[[NewsTableController alloc] init];
         newsListCon.dataSource=newsArray;
+        newsListCon.category=categoryStr;
         [self.navigationController pushViewController:newsListCon animated:YES];
         
     } andFailure:^(NSError *error) {

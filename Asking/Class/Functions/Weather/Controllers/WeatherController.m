@@ -22,6 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置按钮字体
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@"返回"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:nil];
+    self.navigationController.navigationBar.topItem.backBarButtonItem=btnBack;
     
     //开始动画
     [self startAnimation];

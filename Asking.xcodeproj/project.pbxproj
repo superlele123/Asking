@@ -273,6 +273,11 @@
 		88A4E2F01ABD0AD6001B5F8E /* news.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88A4E2EF1ABD0AD6001B5F8E /* news.plist */; };
 		88A4E2F71ABD0AFC001B5F8E /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E2F31ABD0AFC001B5F8E /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		88A4E2FA1ABD0B18001B5F8E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A4E2F91ABD0B18001B5F8E /* libxml2.dylib */; };
+		88A4E3151ABD5F20001B5F8E /* LvesNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4E3141ABD5F20001B5F8E /* LvesNavigationController.m */; };
+		88A4E31A1ABD6028001B5F8E /* navigationbar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A4E3161ABD6028001B5F8E /* navigationbar_background.png */; };
+		88A4E31B1ABD6028001B5F8E /* navigationbar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A4E3171ABD6028001B5F8E /* navigationbar_background@2x.png */; };
+		88A4E31C1ABD6028001B5F8E /* navigationbar_button_background_pushed.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A4E3181ABD6028001B5F8E /* navigationbar_button_background_pushed.png */; };
+		88A4E31D1ABD6028001B5F8E /* navigationbar_button_background_pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A4E3191ABD6028001B5F8E /* navigationbar_button_background_pushed@2x.png */; };
 		88C3558E1ABAC30A0094A3E1 /* AddressBookTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C3558D1ABAC30A0094A3E1 /* AddressBookTool.m */; };
 		88C355901ABACCD20094A3E1 /* news.xml in Resources */ = {isa = PBXBuildFile; fileRef = 88C3558F1ABACCD20094A3E1 /* news.xml */; };
 		88D5D3761A1EDAB600DA036F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D5D3751A1EDAB600DA036F /* main.m */; };
@@ -760,6 +765,12 @@
 		88A4E2F21ABD0AFC001B5F8E /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		88A4E2F31ABD0AFC001B5F8E /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		88A4E2F91ABD0B18001B5F8E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		88A4E3131ABD5F20001B5F8E /* LvesNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LvesNavigationController.h; sourceTree = "<group>"; };
+		88A4E3141ABD5F20001B5F8E /* LvesNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LvesNavigationController.m; sourceTree = "<group>"; };
+		88A4E3161ABD6028001B5F8E /* navigationbar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_background.png; sourceTree = "<group>"; };
+		88A4E3171ABD6028001B5F8E /* navigationbar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_background@2x.png"; sourceTree = "<group>"; };
+		88A4E3181ABD6028001B5F8E /* navigationbar_button_background_pushed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_button_background_pushed.png; sourceTree = "<group>"; };
+		88A4E3191ABD6028001B5F8E /* navigationbar_button_background_pushed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_button_background_pushed@2x.png"; sourceTree = "<group>"; };
 		88C3558C1ABAC30A0094A3E1 /* AddressBookTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookTool.h; sourceTree = "<group>"; };
 		88C3558D1ABAC30A0094A3E1 /* AddressBookTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookTool.m; sourceTree = "<group>"; };
 		88C3558F1ABACCD20094A3E1 /* news.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = news.xml; sourceTree = "<group>"; };
@@ -1665,6 +1676,8 @@
 			children = (
 				88E07DFD1A1EEBD6001B0F90 /* HomeController.h */,
 				88E07DFE1A1EEBD6001B0F90 /* HomeController.m */,
+				88A4E3131ABD5F20001B5F8E /* LvesNavigationController.h */,
+				88A4E3141ABD5F20001B5F8E /* LvesNavigationController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2054,6 +2067,10 @@
 		88ECD4761AB4065A001CF326 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
+				88A4E3161ABD6028001B5F8E /* navigationbar_background.png */,
+				88A4E3171ABD6028001B5F8E /* navigationbar_background@2x.png */,
+				88A4E3181ABD6028001B5F8E /* navigationbar_button_background_pushed.png */,
+				88A4E3191ABD6028001B5F8E /* navigationbar_button_background_pushed@2x.png */,
 				88ECD47B1AB415B0001CF326 /* back@2x.png */,
 				88ECD4791AB407ED001CF326 /* topbarbg@2x.png */,
 			);
@@ -2439,6 +2456,7 @@
 				882724091AB7E28E0006E56D /* chanceflurries_day@3x.png in Resources */,
 				8828E26C1A764F5E00898B90 /* small_shower@2x.png in Resources */,
 				88A1D7F51A74DA400007B7BD /* default_path_pathinfo_bus_normal@3x.png in Resources */,
+				88A4E31D1ABD6028001B5F8E /* navigationbar_button_background_pushed@2x.png in Resources */,
 				88D5D3BA1A1EE09700DA036F /* searchbar_cancelbtn_bg.png in Resources */,
 				88E07E5C1A1EF0A6001B0F90 /* VoiceNodePlaying001@2x.png in Resources */,
 				88A1D8361A7506B70007B7BD /* mapcolor.png in Resources */,
@@ -2498,6 +2516,7 @@
 				88A1D8031A74DA400007B7BD /* icon_route_st@2x.png in Resources */,
 				88E07E601A1EF0A6001B0F90 /* 123.jpg in Resources */,
 				88A1D7DE1A74DA400007B7BD /* button_main_traffic_off@2x.png in Resources */,
+				88A4E31B1ABD6028001B5F8E /* navigationbar_background@2x.png in Resources */,
 				8828E2451A764F5E00898B90 /* retina_great.png in Resources */,
 				88D5D3CA1A1EE09700DA036F /* vr_recognizes_voice_button4_bg4.png in Resources */,
 				88A1D7461A74D7820007B7BD /* AMap.bundle in Resources */,
@@ -2528,6 +2547,7 @@
 				88E07E681A1EF0A6001B0F90 /* SenderTextNodeBkg@3x.png in Resources */,
 				8827244C1AB806A20006E56D /* location_green.png in Resources */,
 				88D5D3BB1A1EE09700DA036F /* searchbar_cancelbtn_bg@2x.png in Resources */,
+				88A4E31A1ABD6028001B5F8E /* navigationbar_background.png in Resources */,
 				8828E26F1A764F5E00898B90 /* small_storm.png in Resources */,
 				8828E26E1A764F5E00898B90 /* small_snowshower@2x.png in Resources */,
 				8828E24C1A764F5E00898B90 /* retina_moderate@2x.png in Resources */,
@@ -2536,6 +2556,7 @@
 				8828E26A1A764F5E00898B90 /* small_scouther@2x.png in Resources */,
 				88ECD47C1AB415B0001CF326 /* back@2x.png in Resources */,
 				8827242B1AB7E28E0006E56D /* flurries.png in Resources */,
+				88A4E31C1ABD6028001B5F8E /* navigationbar_button_background_pushed.png in Resources */,
 				88E07E661A1EF0A6001B0F90 /* ReceiverTextNodeBkgHL@3x.png in Resources */,
 				88E07E6D1A1EF0A6001B0F90 /* video.png in Resources */,
 				88D5D3C81A1EE09700DA036F /* vr_recognizes_voice_button4_bg3.png in Resources */,
@@ -2676,6 +2697,7 @@
 				8863F7241AA85F73008C2D75 /* Business.m in Sources */,
 				88A1D7811A74D9780007B7BD /* FootBottomView.m in Sources */,
 				8806DDF41A2F0B3D00D15D3A /* AFNetworkReachabilityManager.m in Sources */,
+				88A4E3151ABD5F20001B5F8E /* LvesNavigationController.m in Sources */,
 				88F425C51AA17E1F0042E90F /* MusicController.m in Sources */,
 				88F4259F1AA17AAD0042E90F /* UIImage+WebP.m in Sources */,
 				88F4259C1AA17AAD0042E90F /* UIButton+WebCache.m in Sources */,

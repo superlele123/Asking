@@ -23,7 +23,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.title=self.category;
     
+    //设置按钮字体
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@"返回"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(back:)];
+    self.navigationController.navigationBar.topItem.backBarButtonItem=btnBack;
+    
+}
+-(void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
