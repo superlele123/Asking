@@ -17,13 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title=@"商户详情";
+    
     UIWebView *webView=[[UIWebView alloc] initWithFrame:self.view.bounds];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.businessUrl]]];
     webView.scalesPageToFit = YES;
     [self.view addSubview:webView];
     
-    UIBarButtonItem *backButtonItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick:)];
-    self.navigationItem.leftBarButtonItem=backButtonItem;
+    //设置按钮字体
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@"返回"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(backButtonClick:)];
+    self.navigationController.navigationBar.topItem.backBarButtonItem=btnBack;
     
 }
 

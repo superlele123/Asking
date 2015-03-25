@@ -12,9 +12,13 @@
 #import "MusicPlayerManager.h"
 
 #import "ColorTool.h"
-
+#import "MBProgressHUD.h"
 #import "UIImage+AverageColor.h"
 #import "UIColor+Inverse.h"
+
+
+
+
 @interface MusicController ()<UIGestureRecognizerDelegate,MusicPlayerDelegate>
 {
     MusicPlayerManager *_audioPlayerManager;
@@ -22,8 +26,11 @@
     NSUInteger _currentIndex;
     ///初始触摸点
     CGPoint originaPoint;
-    
+    //定时器
     NSTimer *_songTimer;
+    
+    //背景图片
+    UIImageView *_backImageView;
     
 }
 
@@ -37,6 +44,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //背景图片
+    _backImageView=[[UIImageView alloc] initWithFrame:self.view.bounds];
+    [self.view insertSubview:_backImageView atIndex:0];
+    //添加毛玻璃效果
+    UIVisualEffectView *visualEfView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    visualEfView.frame = self.view.bounds;
+    visualEfView.alpha = 1;
+    [_backImageView addSubview:visualEfView];
+    
+   
+    
+    self.view.backgroundColor=[UIColor clearColor];
+
+
    
     
     //设置放器前置图片
@@ -45,6 +66,8 @@
     [self addGestureRecognizer];
     //设置播放器数据源
     [self setMusicPlayer];
+    //设置可以后台播放
+    [self setBackGroundPlay];
     
     
 }
@@ -55,11 +78,9 @@
     //创建定时器
     if(_songTimer==nil){
         _songTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
-//        [[NSRunLoop currentRunLoop] addTimer:_songTimer forMode:NSDefaultRunLoopMode];
         [[NSRunLoop currentRunLoop] addTimer:_songTimer forMode:NSRunLoopCommonModes];
         
     }
-    
     
     //更新播放按钮图片
     [self updatePlayButtonImage:_audioPlayerManager.musicPlayer.state];
@@ -72,6 +93,20 @@
             _songTimer = nil;
         }
     }
+    
+    [self becomeFirstResponder];
+    //注册后台控制
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if (_songTimer.isValid) {
+        [_songTimer invalidate];
+        _songTimer = nil;
+    }
+    [self resignFirstResponder];
 }
 
 #pragma 点击返回
@@ -115,12 +150,12 @@
         CGPoint endPoint=panPoint;
         if (endPoint.x-originaPoint.x>60) {                             //向右滑
             //播放下一首
-            [self nextBtnClick:nil];
+            [_audioPlayerManager playNextSong];
         }
         
         if (endPoint.x-originaPoint.x<-60){                             //向左滑
             //播放前一首
-            [self previousBtnClick:nil];
+             [_audioPlayerManager playpreviousSong];
         }
         
         if (endPoint.y-originaPoint.y>100.f) {                          //向下滑
@@ -163,19 +198,39 @@
     [_audioPlayerManager play];
    
 }
-#pragma mark 上一首
-- (IBAction)previousBtnClick:(id)sender {
-    [_audioPlayerManager playpreviousSong];
+#pragma mark 闹钟
+- (IBAction)clockBtnClick:(id)sender {
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"添加闹钟";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(2);
+    } completionBlock:^{
+        
+    }];
+
 }
 
-#pragma mark 下一首
-- (IBAction)nextBtnClick:(id)sender {
-    [_audioPlayerManager playNextSong];
+#pragma mark 收藏
+- (IBAction)likeBtnClick:(id)sender {
+    
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.labelText = @"收藏成功";
+    HUD.mode = MBProgressHUDModeCustomView;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(2);
+    } completionBlock:^{
+        
+    }];
+    
 }
 
 #pragma mark 改变UI
 -(void)changUIParam:(Song *)song{
-    
+    //背景图片
+    [_backImageView sd_setImageWithURL:[NSURL URLWithString:song.cover] placeholderImage:[UIImage imageNamed:@"icon"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
     //歌曲封面
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:song.cover] placeholderImage:[UIImage imageNamed:@"icon"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
     //设置歌曲名
@@ -183,16 +238,88 @@
     
     self.artistLabel.text=[NSString stringWithFormat:@"一 %@ 一",song.artist];
     //设置背景颜色
-    self.view.backgroundColor=[ColorTool colorFromImageUrl:song.cover];
-    //设置字体颜色
-    self.songNameLabel.textColor=[self.view.backgroundColor inverseColor];
-    self.timerLabel.textColor=self.songNameLabel.textColor;
-    self.artistLabel.textColor=self.songNameLabel.textColor;
+//    self.view.backgroundColor=[ColorTool colorFromImageUrl:song.cover];
+  
+//    //设置字体颜色
+//    self.songNameLabel.textColor=[self.view.backgroundColor inverseColor];
+//    self.timerLabel.textColor=self.songNameLabel.textColor;
+//    self.artistLabel.textColor=self.songNameLabel.textColor;
+    
+   
     
 }
+#pragma  mark - 设置后台播放
+#pragma  mark 设置后台播放属性
+-(void)setBackPlayParames:(Song *)song{
+    
+    //设置锁屏后的图片
+    UIImage *lockImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:song.cover]]];
+    
+    MPMediaItemArtwork  *artwork=[[MPMediaItemArtwork alloc] initWithImage:lockImage];
+    NSDictionary *mediaDict=@{
+                              MPMediaItemPropertyTitle:song.songName,
+                              MPMediaItemPropertyMediaType:@(MPMediaTypeAnyAudio),
+                              MPMediaItemPropertyPlaybackDuration:@(_audioPlayerManager.musicPlayer.duration),
+                              MPNowPlayingInfoPropertyPlaybackRate:@1.0,
+                              MPNowPlayingInfoPropertyElapsedPlaybackTime:@(_audioPlayerManager.musicPlayer.progress),
+                              MPMediaItemPropertyAlbumArtist:song.artist,
+                              MPMediaItemPropertyArtist:song.artist,
+                              MPMediaItemPropertyArtwork:artwork};
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:mediaDict];
+   
+}
+#pragma mark  音乐远程控制
+- (void) remoteControlReceivedWithEvent: (UIEvent *) receivedEvent {
+    if (receivedEvent.type == UIEventTypeRemoteControl) {
+        
+        switch (receivedEvent.subtype) {
+                
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                [_audioPlayerManager play];
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                [_audioPlayerManager playpreviousSong];
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+                [_audioPlayerManager playNextSong];
+                break;
+            case UIEventSubtypeRemoteControlPause:
+                [_audioPlayerManager pause];
+                
+                break;
+            case UIEventSubtypeRemoteControlPlay :
+                [_audioPlayerManager play];
+                break;
+            default:
+                break;
+        }
+    }
+}
+#pragma mark 设置可以后台播放
+-(void)setBackGroundPlay{
+    AVAudioSession *session=[AVAudioSession sharedInstance];
+    NSError *activeError=nil;
+    if (![session setActive:YES error:&activeError]) {
+        NSLog(@"设置激活音乐Session失败。");
+    }
+    NSError *categoryError=nil;
+    if (![session setCategory:AVAudioSessionCategoryPlayback error:&categoryError]) {
+        NSLog(@"设置音频播放类型失败。");
+    }
+}
+
+
+
+
 #pragma mark 改变进度
 -(void)updateProgress{
     self.timerLabel.text=[NSString stringWithFormat:@"%@/%@",[self getTimeFormat:_audioPlayerManager.musicPlayer.progress],[self getTimeFormat:_audioPlayerManager.musicPlayer.duration]];
+    
+     Song *song=_audioPlayerManager.currentSong;
+     //更改后台播放属性
+     [self setBackPlayParames:song];
+    
+    
 }
 
 
@@ -205,7 +332,6 @@
         if(_songTimer==nil){
             _songTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
             [[NSRunLoop currentRunLoop] addTimer:_songTimer forMode:NSRunLoopCommonModes];
-//            [[NSRunLoop currentRunLoop] addTimer:_songTimer forMode:NSDefaultRunLoopMode];
             [_songTimer fire];
         }
         

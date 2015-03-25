@@ -280,6 +280,10 @@
 		88A4E31D1ABD6028001B5F8E /* navigationbar_button_background_pushed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A4E3191ABD6028001B5F8E /* navigationbar_button_background_pushed@2x.png */; };
 		88C3558E1ABAC30A0094A3E1 /* AddressBookTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C3558D1ABAC30A0094A3E1 /* AddressBookTool.m */; };
 		88C355901ABACCD20094A3E1 /* news.xml in Resources */ = {isa = PBXBuildFile; fileRef = 88C3558F1ABACCD20094A3E1 /* news.xml */; };
+		88C9C0F21AC2B7D300F200B6 /* actionIconLike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C9C0EF1AC2B7D300F200B6 /* actionIconLike@2x.png */; };
+		88C9C0F31AC2B7D300F200B6 /* actionIconLikeSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C9C0F01AC2B7D300F200B6 /* actionIconLikeSelected@2x.png */; };
+		88C9C0F41AC2B7D300F200B6 /* actionIconUnlikeSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C9C0F11AC2B7D300F200B6 /* actionIconUnlikeSelected@2x.png */; };
+		88C9C0FE1AC2C25100F200B6 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C9C0FD1AC2C25100F200B6 /* clock@2x.png */; };
 		88D5D3761A1EDAB600DA036F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D5D3751A1EDAB600DA036F /* main.m */; };
 		88D5D3791A1EDAB600DA036F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D5D3781A1EDAB600DA036F /* AppDelegate.m */; };
 		88D5D37C1A1EDAB600DA036F /* Asking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88D5D37A1A1EDAB600DA036F /* Asking.xcdatamodeld */; };
@@ -774,6 +778,10 @@
 		88C3558C1ABAC30A0094A3E1 /* AddressBookTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookTool.h; sourceTree = "<group>"; };
 		88C3558D1ABAC30A0094A3E1 /* AddressBookTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookTool.m; sourceTree = "<group>"; };
 		88C3558F1ABACCD20094A3E1 /* news.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = news.xml; sourceTree = "<group>"; };
+		88C9C0EF1AC2B7D300F200B6 /* actionIconLike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIconLike@2x.png"; sourceTree = "<group>"; };
+		88C9C0F01AC2B7D300F200B6 /* actionIconLikeSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIconLikeSelected@2x.png"; sourceTree = "<group>"; };
+		88C9C0F11AC2B7D300F200B6 /* actionIconUnlikeSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIconUnlikeSelected@2x.png"; sourceTree = "<group>"; };
+		88C9C0FD1AC2C25100F200B6 /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
 		88D5D3701A1EDAB600DA036F /* Asking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D5D3741A1EDAB600DA036F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88D5D3751A1EDAB600DA036F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1012,6 +1020,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E07EF21A1EF4DD001B0F90 /* MediaPlayer.framework in Frameworks */,
 				88A4E2FA1ABD0B18001B5F8E /* libxml2.dylib in Frameworks */,
 				88A1D7521A74D8100007B7BD /* AdSupport.framework in Frameworks */,
 				88A1D7501A74D8020007B7BD /* Security.framework in Frameworks */,
@@ -1027,7 +1036,6 @@
 				88E07EF81A1EF4F5001B0F90 /* CoreData.framework in Frameworks */,
 				88E07EF61A1EF4EE001B0F90 /* CoreGraphics.framework in Frameworks */,
 				88E07EF41A1EF4E6001B0F90 /* AVFoundation.framework in Frameworks */,
-				88E07EF21A1EF4DD001B0F90 /* MediaPlayer.framework in Frameworks */,
 				88E07EF01A1EF4D4001B0F90 /* CoreMotion.framework in Frameworks */,
 				88E07EEE1A1EF4B7001B0F90 /* SystemConfiguration.framework in Frameworks */,
 				88E07EEC1A1EF4A9001B0F90 /* QuartzCore.framework in Frameworks */,
@@ -2170,6 +2178,10 @@
 		88F425B21AA17CBA0042E90F /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				88C9C0FD1AC2C25100F200B6 /* clock@2x.png */,
+				88C9C0EF1AC2B7D300F200B6 /* actionIconLike@2x.png */,
+				88C9C0F01AC2B7D300F200B6 /* actionIconLikeSelected@2x.png */,
+				88C9C0F11AC2B7D300F200B6 /* actionIconUnlikeSelected@2x.png */,
 				88F425C61AA1C5C90042E90F /* player_btn_close_highlight@2x.png */,
 				88F425C71AA1C5C90042E90F /* player_btn_close_normal@2x.png */,
 				88F425C81AA1C5C90042E90F /* player_btn_more_highlight@2x.png */,
@@ -2298,6 +2310,7 @@
 				88A1D7FA1A74DA400007B7BD /* default_path_pathinfo_railway_normal@2x.png in Resources */,
 				88E07E651A1EF0A6001B0F90 /* ReceiverTextNodeBkgHL@2x.png in Resources */,
 				8827244D1AB806A20006E56D /* location_green@2x.png in Resources */,
+				88C9C0F41AC2B7D300F200B6 /* actionIconUnlikeSelected@2x.png in Resources */,
 				88E07E5D1A1EF0A6001B0F90 /* VoiceNodePlaying002@2x.png in Resources */,
 				8828E2741A764F5E00898B90 /* small_tunder@2x.png in Resources */,
 				88A1D7D71A74DA400007B7BD /* BaseNavigationBar_Back_IronGray_Arrow_Highlighted@3x.png in Resources */,
@@ -2430,9 +2443,12 @@
 				88E07E531A1EF0A6001B0F90 /* ReceiverVoiceNodePlaying002@2x.png in Resources */,
 				88D5D3C21A1EE09700DA036F /* voice_press.png in Resources */,
 				88A1D7E21A74DA400007B7BD /* default_common_route_endpoint_normal.png in Resources */,
+				88C9C0F21AC2B7D300F200B6 /* actionIconLike@2x.png in Resources */,
+				88C9C0FE1AC2C25100F200B6 /* clock@2x.png in Resources */,
 				8827240C1AB7E28E0006E56D /* chancerain@3x.png in Resources */,
 				882724411AB7E28E0006E56D /* rain@2x.png in Resources */,
 				88A1D7FF1A74DA400007B7BD /* icon_navigation-footprint_arrow_down@2x.png in Resources */,
+				88C9C0F31AC2B7D300F200B6 /* actionIconLikeSelected@2x.png in Resources */,
 				882724201AB7E28E0006E56D /* chancetstorms_n@2x.png in Resources */,
 				88A1D7DF1A74DA400007B7BD /* button_main_traffic_off@3x.png in Resources */,
 				88A1D8151A74DA400007B7BD /* map_route_turn_right_front@2x.png in Resources */,

@@ -66,7 +66,7 @@
 
 -(void)bubbleViewPressed:(id)sender
 {
-    NSLog(@"%@",@"MovieBubble");
+    DLog(@"%@",@"MovieBubble");
 
 }
 

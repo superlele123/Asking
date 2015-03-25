@@ -506,7 +506,7 @@ typedef enum{
         [_mapView removeAnnotations:_mapView.annotations];
         [self initAnnotations:response.pois]; //添加锚点
     }else{
-        NSLog(@"%@",@"未找到");
+        DLog(@"%@",@"未找到");
     }
     
 }
@@ -750,7 +750,7 @@ typedef enum{
     if(updatingLocation==YES)
     {
         //取出当前位置的坐标
-        NSLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+        DLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
         _userCoordinate2D=userLocation.coordinate;
         
         if(_isGetLocation==NO){
@@ -857,7 +857,7 @@ typedef enum{
 }
 
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    NSLog(@"endScroll");
+    DLog(@"endScroll");
 }
 #pragma mark 点击PageControl
 -(void)pageControlClicked:(UIPageControl *)cPageControl{

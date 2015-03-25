@@ -17,7 +17,7 @@
 #import <CoreData/CoreData.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import <MediaPlayer/MediaPlayer.h>
 
 //科大讯飞
 #import "iflyMSC/IFlySpeechUtility.h"
@@ -34,6 +34,13 @@
 #import "UIImageView+WebCache.h"
 
 
+
+
+#ifdef DEBUG
+#    define DLog(...) NSLog(__VA_ARGS__)
+#else
+#    define DLog(...)
+#endif
 
 
 

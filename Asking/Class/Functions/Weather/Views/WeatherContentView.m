@@ -224,7 +224,7 @@
     }else if ([weatherDes containsString:@"雪"]){
     _weatherIcon.image=[UIImage imageNamed:@"retina_scouther"];
     }else{
-        NSLog(@"\n新的天气\n");
+        DLog(@"\n新的天气\n");
     }
     
     

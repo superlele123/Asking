@@ -76,7 +76,7 @@
 
 -(void)bubbleViewPressed:(id)sender
 {
-   NSLog(@"%@",@"ImageBubble");
+   DLog(@"%@",@"ImageBubble");
 }
 
 

@@ -103,7 +103,7 @@
         imageName=@"icon_route_end";
         _actionImageView.bounds=CGRectMake(0, 0, 12, 12);
     }else{
-         NSLog(@"Action:::::::%@\n",action);
+         DLog(@"Action:::::::%@\n",action);
     }
     
     _actionImageView.image=[UIImage imageNamed:imageName];

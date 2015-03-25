@@ -176,11 +176,11 @@
                                                     <constraint firstAttribute="width" constant="50" id="3qT-1j-1sc"/>
                                                     <constraint firstAttribute="height" constant="50" id="Pb6-k3-3WI"/>
                                                 </constraints>
-                                                <state key="normal" image="playing_btn_pre_h.png">
+                                                <state key="normal" image="clock.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="previousBtnClick:" destination="gZS-S1-20s" eventType="touchUpInside" id="yzV-Mj-TJ6"/>
+                                                    <action selector="clockBtnClick:" destination="gZS-S1-20s" eventType="touchUpInside" id="sGD-B5-81z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -222,11 +222,11 @@
                                                     <constraint firstAttribute="height" constant="50" id="Mz8-Xq-NOv"/>
                                                     <constraint firstAttribute="width" constant="50" id="t4v-P2-F3p"/>
                                                 </constraints>
-                                                <state key="normal" image="playing_btn_next_h.png">
+                                                <state key="normal" image="actionIconUnlikeSelected.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="nextBtnClick:" destination="gZS-S1-20s" eventType="touchUpInside" id="ctx-Aj-04k"/>
+                                                    <action selector="likeBtnClick:" destination="gZS-S1-20s" eventType="touchUpInside" id="ujb-Mg-JXv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -261,7 +261,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="BAE-61-hZs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -288,7 +288,7 @@
                                     <constraint firstAttribute="height" constant="20" id="Vl0-mA-8n3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eM9-ot-fP0" userLabel="MiddleView">
@@ -307,7 +307,7 @@
                                             <constraint firstAttribute="height" constant="21" id="jdj-86-SqW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -368,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6O0-ow-oy5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2147" y="69"/>
+            <point key="canvasLocation" x="1934" y="3"/>
         </scene>
         <!--Weather Controller-->
         <scene sceneID="y23-zw-0Bg">
@@ -722,11 +722,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="actionIconUnlikeSelected.png" width="60" height="60"/>
+        <image name="clock.png" width="60" height="60"/>
         <image name="cloudy@3x.png" width="212" height="180"/>
         <image name="icon.png" width="128" height="128"/>
         <image name="player_btn_close_normal.png" width="60" height="44"/>
-        <image name="playing_btn_next_h.png" width="40" height="40"/>
         <image name="playing_btn_play_h.png" width="65" height="65"/>
-        <image name="playing_btn_pre_h.png" width="40" height="40"/>
     </resources>
 </document>

@@ -78,7 +78,7 @@
 #pragma mark - public
 
 -(void)bubbleViewPressed:(id)sender{
-    NSLog(@"%@",@"VoiceBubble");
+    DLog(@"%@",@"VoiceBubble");
 }
 
 

@@ -47,7 +47,7 @@
 
 
 -(void)bubbleViewPressed:(id)sender{
-    NSLog(@"%@",@"BaseBubble");
+    DLog(@"%@",@"BaseBubble");
 
 }
 //计算气泡的高度

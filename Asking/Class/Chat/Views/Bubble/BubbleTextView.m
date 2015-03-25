@@ -97,7 +97,7 @@
 }
 
 -(void)bubbleViewPressed:(id)sender{
-    NSLog(@"%@",@"TextBubble");
+    DLog(@"%@",@"TextBubble");
 }
 
 

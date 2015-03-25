@@ -25,9 +25,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 - (IBAction)playBtnClick:(id)sender;
-- (IBAction)previousBtnClick:(id)sender;
+
 - (IBAction)backBtnClick:(id)sender;
 
-
-- (IBAction)nextBtnClick:(id)sender;
+- (IBAction)clockBtnClick:(id)sender;
+- (IBAction)likeBtnClick:(id)sender;
 @end

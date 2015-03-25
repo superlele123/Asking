@@ -71,6 +71,7 @@ typedef enum {
     ///当前播放歌曲
     Song *_currentSong;
     MusicPlayerManager *audioManager;
+    
 }
 
 @end
@@ -94,19 +95,22 @@ typedef enum {
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    //设置代理
+    //设置音乐管理器代理
     audioManager.delegate=self;
-    
     _currentSong=audioManager.currentSong;
     if (_currentSong) {
         [rotateImageView sd_setImageWithURL:[NSURL URLWithString:_currentSong.cover] placeholderImage:[UIImage imageNamed:@"icon"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
-        //正在播放
-        if (audioManager.musicPlayer.state==STKAudioPlayerStatePlaying||audioManager.musicPlayer.state==STKAudioPlayerStateRunning) {
+        
+        if (audioManager.musicPlayer.state==STKAudioPlayerStatePlaying||audioManager.musicPlayer.state==STKAudioPlayerStateRunning) {   //正在播放
+            
             if (rotateState!=RotateStateRunning) {
                 rotateState=RotateStateRunning;
                 [self rotateAnimate];
             }
-        }else{
+            //注册远程通知
+            [self becomeFirstResponder];
+            [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+        }else{   //暂停或结束
             rotateState=RotateStateStop;
         }
     }
@@ -132,19 +136,26 @@ typedef enum {
     _maskView.backgroundColor=[UIColor blackColor];
     _maskView.alpha=0.5f;
     _maskView.userInteractionEnabled=NO;
-    
-
 }
 #pragma mark  初始化语音播放器
 -(void) buildAudioManager{
     audioManager=[MusicPlayerManager sharedManager];
     audioManager.delegate=self;
-    
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    //注册远程控制
     [self becomeFirstResponder];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    AVAudioSession *session=[AVAudioSession sharedInstance];
+    NSError *activeError=nil;
+    if (![session setActive:YES error:&activeError]) {
+        NSLog(@"设置激活音乐Session失败。");
+    }
+    NSError *categoryError=nil;
+    if (![session setCategory:AVAudioSessionCategoryPlayback error:&categoryError]) {
+        NSLog(@"设置音频播放类型失败。");
+    }
     
 }
-#pragma mark  远程控制
+#pragma mark  音乐远程控制
 - (void) remoteControlReceivedWithEvent: (UIEvent *) receivedEvent {
     if (receivedEvent.type == UIEventTypeRemoteControl) {
         
@@ -198,7 +209,6 @@ typedef enum {
     _speechView=[[CustomSpeechView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kActivityViewH)];
     _speechView.delegate=self;
     [self.view addSubview:_speechView];
-    
 }
 
 /*添加语音识别按钮*/
@@ -291,7 +301,7 @@ typedef enum {
     //启动上传
     [uploader uploadDataWithCompletionHandler:^(NSString * grammerID, IFlySpeechError *error) {
         //接受返回的grammerID和error
-        NSLog(@"%@",grammerID);
+        DLog(@"%@",grammerID);
 //        [self onUploadFinished:grammerID error:error];
     }name:@"contact" data: contactList];
     
@@ -316,8 +326,8 @@ typedef enum {
         
         
         if (err != kAudioServicesNoError)
-            NSLog(@"error");
-            //NSLog(@"Could not load %@, error code: %d", soundURL, err);
+            DLog(@"error");
+            //DLog(@"Could not load %@, error code: %d", soundURL, err);
     }
     
 }
@@ -395,7 +405,7 @@ typedef enum {
 }
 
 -(void)onEndOfSpeech{
-    NSLog(@"%@",@"ok");
+    DLog(@"%@",@"ok");
 
 }
 
@@ -540,7 +550,7 @@ typedef enum {
 }
 -(void) onError:(IFlySpeechError*) error
 {
-    NSLog(@"语音解析错误::%@",[error errorDesc]);
+    DLog(@"语音解析错误::%@",[error errorDesc]);
 }
 
 
@@ -571,7 +581,7 @@ typedef enum {
                      NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_dataArray.count-1];
                      [_mainTableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
                  } andFialure:^(NSError *error) {
-                     NSLog(@"获得天气失败");
+                     DLog(@"获得天气失败");
                  }];
                 return;
 
@@ -580,7 +590,7 @@ typedef enum {
                 currentMusicModel=functionModel.musicModel;
                 NSString *artist=currentMusicModel.artist;
                 NSString *songName=currentMusicModel.songName;
-                NSLog(@"%@---》%@",artist,songName);
+                DLog(@"%@---》%@",artist,songName);
                 //2. 请求Music信息
                 
                 [MusicTools getMusicByArtist:artist andSong:songName andSuccess:^(MusicModel *musicModel) {
@@ -616,12 +626,12 @@ typedef enum {
                     NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_dataArray.count-1];
                     [_mainTableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
                 } andFailure:^(NSError *error) {
-                     NSLog(@"%@",error);
+                     DLog(@"%@",error);
                 }];
                 return;
 
             }else if (functionModel.type==FunctionTypeTelephone){  //打电话
-                NSLog(@"%@",functionModel.telephoneModel.name);
+                DLog(@"%@",functionModel.telephoneModel.name);
                 
                 NSString *personName=functionModel.telephoneModel.name;
                 
@@ -713,15 +723,40 @@ typedef enum {
     _currentSong=song;
 
     [rotateImageView sd_setImageWithURL:[NSURL URLWithString:song.cover] placeholderImage:[UIImage imageNamed:@"icon"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
+    
+    [self setBackPlayParames:song];
+   
 }
 -(void)musicPlayer:(STKAudioPlayer *)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState{
-    if (state==STKAudioPlayerStateStopped) {
+    if (state==STKAudioPlayerStateStopped||state==STKAudioPlayerStatePaused) {
         [self stopRotateAnimate];
+        
     }else if (state==STKAudioPlayerStatePlaying){
         [self rotateImageViewAnimate];
     }
-    
 }
+-(void)setBackPlayParames:(Song *)song{
+    
+    //设置锁屏后的图片
+    UIImage *lockImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:song.cover]]];
+    
+    MPMediaItemArtwork  *artwork=[[MPMediaItemArtwork alloc] initWithImage:lockImage];
+    NSDictionary *mediaDict=@{
+                              MPMediaItemPropertyTitle:song.songName,
+                              MPMediaItemPropertyMediaType:@(MPMediaTypeAnyAudio),
+                              MPMediaItemPropertyPlaybackDuration:@(audioManager.musicPlayer.duration),
+                              MPNowPlayingInfoPropertyPlaybackRate:@1.0,
+                              MPNowPlayingInfoPropertyElapsedPlaybackTime:@(audioManager.musicPlayer.progress),
+                              MPMediaItemPropertyAlbumArtist:song.artist,
+                              MPMediaItemPropertyArtist:song.artist,
+                              MPMediaItemPropertyArtwork:artwork};
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:mediaDict];
+   
+}
+
+
+
+
 @end
 
 

@@ -132,11 +132,11 @@
             }
 
             
-            NSLog(@"%@--》%@--》%@--》%@",_placemark.country,_placemark.administrativeArea,_placemark.locality,_placemark.subLocality);
-//            NSLog(@"街道：%@-->门牌号：%@",_placemark.thoroughfare,_placemark.subThoroughfare);
+            DLog(@"%@--》%@--》%@--》%@",_placemark.country,_placemark.administrativeArea,_placemark.locality,_placemark.subLocality);
+//            DLog(@"街道：%@-->门牌号：%@",_placemark.thoroughfare,_placemark.subThoroughfare);
 //
         } else {
-            NSLog(@"%@", error.debugDescription);
+            DLog(@"%@", error.debugDescription);
         }
     } ];
     
@@ -193,7 +193,7 @@
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        DLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     
@@ -225,7 +225,7 @@
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            DLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }

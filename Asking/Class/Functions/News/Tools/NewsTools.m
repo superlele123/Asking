@@ -38,7 +38,7 @@
         NSString *responsStr=[NSString stringWithUTF8String:[responseObject bytes]];
         
         NSArray *newsArray=[self parseSinaNews:responsStr];
-        NSLog(@"%@",newsArray);
+        DLog(@"%@",newsArray);
         if(newsArray.count>0&&success){
             success(newsArray);
         }else{

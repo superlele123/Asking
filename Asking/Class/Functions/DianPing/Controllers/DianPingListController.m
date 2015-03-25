@@ -26,11 +26,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      _dataSource=businessArray;
+    self.title=@"美食";
     
-    
-    UIBarButtonItem *backButtonItem=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick:)];
-    self.navigationItem.leftBarButtonItem=backButtonItem;
-
+    //设置按钮字体
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@"返回"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(backButtonClick:)];
+    self.navigationController.navigationBar.topItem.backBarButtonItem=btnBack;
     
 }
 
@@ -61,7 +65,6 @@
     DianPingCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
     if (cell == nil)
     {
-        
         cell = [[DianPingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:showUserInfoCellIdentifier];
     }
     
