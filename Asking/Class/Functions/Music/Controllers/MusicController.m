@@ -107,6 +107,7 @@
         _songTimer = nil;
     }
     [self resignFirstResponder];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
 }
 
 #pragma 点击返回
