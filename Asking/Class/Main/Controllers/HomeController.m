@@ -87,16 +87,17 @@ typedef enum {
     [self initAudioFile];
     //3. 初始化UI
     [self buildUI];
-    //4. 初始化语音播放器
-    [self buildAudioManager];
+    
     
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    //设置音乐管理器代理
-    audioManager.delegate=self;
+    
+    //4. 初始化语音播放器
+    [self buildAudioManager];
+    
     _currentSong=audioManager.currentSong;
     if (_currentSong) {
         [rotateImageView sd_setImageWithURL:[NSURL URLWithString:_currentSong.cover] placeholderImage:[UIImage imageNamed:@"icon"] options:SDWebImageRetryFailed|SDWebImageLowPriority];

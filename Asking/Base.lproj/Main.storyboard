@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfx-ws-i4q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfx-ws-i4q">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -253,6 +253,11 @@
                                     <constraint firstItem="2SA-Y4-jFJ" firstAttribute="leading" secondItem="6It-oW-CHK" secondAttribute="leading" id="v5B-17-eje"/>
                                     <constraint firstAttribute="trailing" secondItem="8Ym-HF-eWt" secondAttribute="trailing" id="wTh-It-j2Z"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dgO-Xf-M8L"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loding..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p9m-nh-5ax">
                                 <rect key="frame" x="70" y="20" width="460" height="44"/>
@@ -294,30 +299,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eM9-ot-fP0" userLabel="MiddleView">
                                 <rect key="frame" x="0.0" y="92" width="600" height="358"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="oo5-67-014">
-                                        <rect key="frame" x="175" y="54" width="250" height="250"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="5hv-YN-7XK"/>
-                                            <constraint firstAttribute="width" constant="250" id="sm8-Ig-Ue5"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-SF-iGo" userLabel="TimeLabel">
-                                        <rect key="frame" x="0.0" y="314" width="600" height="21"/>
+                                        <rect key="frame" x="0.0" y="341" width="600" height="17"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="jdj-86-SqW"/>
+                                            <constraint firstAttribute="height" constant="17" id="jdj-86-SqW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="l1t-mx-d1I">
+                                        <rect key="frame" x="153" y="32" width="295" height="295"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="295" id="Kut-wG-cxp"/>
+                                            <constraint firstAttribute="width" constant="295" id="ic0-P5-ys2"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aQJ-SF-iGo" secondAttribute="bottom" id="Buh-6V-hOv"/>
+                                    <constraint firstAttribute="trailing" secondItem="aQJ-SF-iGo" secondAttribute="trailing" id="P5e-PC-JXK"/>
                                     <constraint firstItem="aQJ-SF-iGo" firstAttribute="leading" secondItem="eM9-ot-fP0" secondAttribute="leading" id="UuR-ij-sVK"/>
-                                    <constraint firstItem="aQJ-SF-iGo" firstAttribute="centerX" secondItem="oo5-67-014" secondAttribute="centerX" id="a4R-j4-4xW"/>
-                                    <constraint firstAttribute="centerY" secondItem="oo5-67-014" secondAttribute="centerY" id="avd-Lf-2R5"/>
-                                    <constraint firstAttribute="centerX" secondItem="oo5-67-014" secondAttribute="centerX" id="db3-Eg-IFk"/>
-                                    <constraint firstItem="aQJ-SF-iGo" firstAttribute="top" secondItem="oo5-67-014" secondAttribute="bottom" constant="10" id="zB4-uA-AbI"/>
+                                    <constraint firstAttribute="centerY" secondItem="l1t-mx-d1I" secondAttribute="centerY" id="V7G-rG-O5B"/>
+                                    <constraint firstAttribute="centerX" secondItem="l1t-mx-d1I" secondAttribute="centerX" id="bZk-iX-rns"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -344,6 +349,7 @@
                             <constraint firstAttribute="centerX" secondItem="p9m-nh-5ax" secondAttribute="centerX" id="tlL-G7-sCg"/>
                             <constraint firstItem="p9m-nh-5ax" firstAttribute="leading" secondItem="Wfc-WZ-XDc" secondAttribute="trailing" id="uEB-Fq-v8W"/>
                             <constraint firstItem="6It-oW-CHK" firstAttribute="leading" secondItem="LLQ-hg-eK7" secondAttribute="leading" id="vOv-38-IO1"/>
+                            <constraint firstItem="VTH-Yg-YDr" firstAttribute="top" secondItem="aQJ-SF-iGo" secondAttribute="bottom" id="yNm-d4-eAq"/>
                             <constraint firstItem="Wfc-WZ-XDc" firstAttribute="top" secondItem="2Oj-nl-0vu" secondAttribute="bottom" id="znQ-8B-Ejb"/>
                         </constraints>
                         <variation key="default">
@@ -360,7 +366,8 @@
                         <outlet property="bottomLeftView" destination="2SA-Y4-jFJ" id="U2L-pQ-ukr"/>
                         <outlet property="bottomMiddleView" destination="VTH-Yg-YDr" id="lq1-UG-kLz"/>
                         <outlet property="bottomRightView" destination="8Ym-HF-eWt" id="md0-MK-OJg"/>
-                        <outlet property="imageView" destination="oo5-67-014" id="952-9A-FRn"/>
+                        <outlet property="imageView" destination="l1t-mx-d1I" id="0G9-U7-27e"/>
+                        <outlet property="middleView" destination="eM9-ot-fP0" id="3SE-wK-tWW"/>
                         <outlet property="playButton" destination="isM-gw-8Cd" id="qHY-At-ZAH"/>
                         <outlet property="songNameLabel" destination="p9m-nh-5ax" id="rC8-B5-eZb"/>
                         <outlet property="timerLabel" destination="aQJ-SF-iGo" id="wrX-hw-SLI"/>

@@ -90,16 +90,25 @@
     if(_musicArray.count<=0){
         return;
     }
-    if (_currentIndex+1<=_musicArray.count-1) {
-        Song *nextSong=_musicArray[_currentIndex+1];
-        NSURL *nextUrl=[NSURL URLWithString:nextSong.songUrl];
-        [_musicPlayer setDataSource:[STKAudioPlayer dataSourceFromURL:nextUrl] withQueueItemId:nextSong.songUrl];
-        //通知代理
-        if(self.delegate&&[self.delegate respondsToSelector:@selector(musicPlayer:playNextSong:)]){
-            [self.delegate musicPlayer:musicPlayer playNextSong:nextSong];
-        }
-        
+    
+    NSInteger nextIndex;
+    if (_currentIndex+1<=_musicArray.count-1) { //有下一首
+        nextIndex=_currentIndex+1;
+    }else{
+        nextIndex=0;
+        _currentIndex=0;
     }
+    
+    Song *nextSong=_musicArray[nextIndex];
+    NSURL *nextUrl=[NSURL URLWithString:nextSong.songUrl];
+    [_musicPlayer setDataSource:[STKAudioPlayer dataSourceFromURL:nextUrl] withQueueItemId:nextSong.songUrl];
+    //通知代理
+    if(self.delegate&&[self.delegate respondsToSelector:@selector(musicPlayer:playNextSong:)]){
+        [self.delegate musicPlayer:musicPlayer playNextSong:nextSong];
+    }
+
+    
+    
     
 }
 #pragma mark 播放前一首
@@ -108,14 +117,25 @@
         return;
     }
     
+    NSInteger nextIndex;
     if (_currentIndex>=1) {
-        Song *previousSong=_musicArray[_currentIndex-1];
-        NSURL *nextUrl=[NSURL URLWithString:previousSong.songUrl];
-        [_musicPlayer setDataSource:[STKAudioPlayer dataSourceFromURL:nextUrl] withQueueItemId:previousSong.songUrl];
-        //通知代理
-        if(self.delegate&&[self.delegate respondsToSelector:@selector(musicPlayer:playNextSong:)]){
-            [self.delegate musicPlayer:musicPlayer playNextSong:previousSong];
+        nextIndex=_currentIndex-1;
+    }else{
+        if (_musicArray.count>=2) {
+            _currentIndex=_musicArray.count-1;
+        }else{
+            _currentIndex=0;
         }
+        nextIndex=_currentIndex;
+        
+    }
+    
+    Song *previousSong=_musicArray[nextIndex];
+    NSURL *nextUrl=[NSURL URLWithString:previousSong.songUrl];
+    [_musicPlayer setDataSource:[STKAudioPlayer dataSourceFromURL:nextUrl] withQueueItemId:previousSong.songUrl];
+    //通知代理
+    if(self.delegate&&[self.delegate respondsToSelector:@selector(musicPlayer:playNextSong:)]){
+        [self.delegate musicPlayer:musicPlayer playNextSong:previousSong];
     }
 
 }

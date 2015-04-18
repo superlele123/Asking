@@ -10,10 +10,10 @@
 @class Song;
 
 @interface MusicController : UIViewController
-{
-    NSArray *musicArray;
-}
+
+
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIView *middleView;
 
 @property (nonatomic,strong) Song *currentSong;
 
@@ -21,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomMiddleView;
 @property (weak, nonatomic) IBOutlet UIView *bottomRightView;
 @property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+///封面
+@property (strong, nonatomic) IBOutlet  UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 - (IBAction)playBtnClick:(id)sender;
