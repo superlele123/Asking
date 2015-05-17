@@ -154,6 +154,8 @@
 		8863F7241AA85F73008C2D75 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863F7211AA85F73008C2D75 /* Business.m */; };
 		8863F7251AA85F73008C2D75 /* DianPingDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863F7231AA85F73008C2D75 /* DianPingDeal.m */; };
 		8863F7291AA85FA1008C2D75 /* DianPingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863F7281AA85FA1008C2D75 /* DianPingTools.m */; };
+		888D56B21B0874E5005A0859 /* NSString+Contain.m in Sources */ = {isa = PBXBuildFile; fileRef = 888D56B11B0874E5005A0859 /* NSString+Contain.m */; };
+		888D56B51B087AE0005A0859 /* DianPingKeyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 888D56B41B087AE0005A0859 /* DianPingKeyModel.m */; };
 		88A1D7421A74D7140007B7BD /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1D7401A74D7140007B7BD /* AMapSearchKit.framework */; };
 		88A1D7431A74D7140007B7BD /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1D7411A74D7140007B7BD /* MAMapKit.framework */; };
 		88A1D7461A74D7820007B7BD /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88A1D7451A74D7820007B7BD /* AMap.bundle */; };
@@ -629,6 +631,10 @@
 		8863F7231AA85F73008C2D75 /* DianPingDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianPingDeal.m; sourceTree = "<group>"; };
 		8863F7271AA85FA1008C2D75 /* DianPingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianPingTools.h; sourceTree = "<group>"; };
 		8863F7281AA85FA1008C2D75 /* DianPingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianPingTools.m; sourceTree = "<group>"; };
+		888D56B01B0874E5005A0859 /* NSString+Contain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Contain.h"; sourceTree = "<group>"; };
+		888D56B11B0874E5005A0859 /* NSString+Contain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Contain.m"; sourceTree = "<group>"; };
+		888D56B31B087AE0005A0859 /* DianPingKeyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianPingKeyModel.h; sourceTree = "<group>"; };
+		888D56B41B087AE0005A0859 /* DianPingKeyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianPingKeyModel.m; sourceTree = "<group>"; };
 		88A1D7401A74D7140007B7BD /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = Asking/Libs/AMap/AMapSearchKit.framework; sourceTree = "<group>"; };
 		88A1D7411A74D7140007B7BD /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Asking/Libs/AMap/MAMapKit.framework; sourceTree = "<group>"; };
 		88A1D7451A74D7820007B7BD /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
@@ -1308,6 +1314,8 @@
 				8863F7231AA85F73008C2D75 /* DianPingDeal.m */,
 				8863F70F1AA83FB9008C2D75 /* DianPingModel.h */,
 				8863F7101AA83FB9008C2D75 /* DianPingModel.m */,
+				888D56B31B087AE0005A0859 /* DianPingKeyModel.h */,
+				888D56B41B087AE0005A0859 /* DianPingKeyModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1882,6 +1890,8 @@
 		88E07E9C1A1EF26B001B0F90 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				888D56B01B0874E5005A0859 /* NSString+Contain.h */,
+				888D56B11B0874E5005A0859 /* NSString+Contain.m */,
 				88F425AC1AA17AEF0042E90F /* UIColor+Inverse.h */,
 				88F425AD1AA17AEF0042E90F /* UIColor+Inverse.m */,
 				88F425AE1AA17AEF0042E90F /* UIImage+AverageColor.h */,
@@ -2683,6 +2693,7 @@
 				88E07E991A1EF17C001B0F90 /* SBJsonTokeniser.m in Sources */,
 				881F09C71A78AD10003265A5 /* WeatherDesc.m in Sources */,
 				88F425991AA17AAD0042E90F /* SDWebImageDownloaderOperation.m in Sources */,
+				888D56B51B087AE0005A0859 /* DianPingKeyModel.m in Sources */,
 				88F425A41AA17AAD0042E90F /* STKAudioPlayer.m in Sources */,
 				88F425981AA17AAD0042E90F /* SDWebImageDownloader.m in Sources */,
 				88F425A51AA17AAD0042E90F /* STKAutoRecoveringHTTPDataSource.m in Sources */,
@@ -2700,6 +2711,7 @@
 				88A1D7691A74D9680007B7BD /* MapMainController.m in Sources */,
 				88E07E921A1EF17C001B0F90 /* SBJsonStreamParser.m in Sources */,
 				8863F7291AA85FA1008C2D75 /* DianPingTools.m in Sources */,
+				888D56B21B0874E5005A0859 /* NSString+Contain.m in Sources */,
 				88E07ECF1A1EF26B001B0F90 /* FunctionModel.m in Sources */,
 				88E07EC41A1EF26B001B0F90 /* UIImage+Utils.m in Sources */,
 				88F454461AAA940D0072D044 /* DianPingListController.m in Sources */,

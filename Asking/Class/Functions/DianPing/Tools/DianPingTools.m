@@ -14,6 +14,7 @@
 #import "DianPingModel.h"
 
 
+
 #define kDianPingAppKey             @"2092073324"
 #define kDianPinAppSecret          @"6a874042cbd74759818767208a4faa27"
 
@@ -131,5 +132,324 @@
     }
     return paramsString;
 }
+
+
++ (NSString *)getCategory:(NSString *)name
+{
+    if ([name isContainsString:@"加油站"] ||
+        [name isContainsString:@"汽车美容"] ||
+        [name isContainsString:@"维修保养"] ||
+        [name isContainsString:@"4s店"] ||
+        [name isContainsString:@"汽车销售"] ||
+        [name isContainsString:@"汽车租赁"] ||
+        [name isContainsString:@"停车场"] ||
+        [name isContainsString:@"汽车配件"] ||
+        [name isContainsString:@"车饰"] ||
+        [name isContainsString:@"汽车保险"] ||
+        [name isContainsString:@"JIAYOUZHAN"] ||
+        [name isContainsString:@"QICHEMEIRONG"] ||
+        [name isContainsString:@"WEIXIUBAOYANG"] ||
+        [name isContainsString:@"SISDIAN"] ||
+        [name isContainsString:@"QICHEXIAOSHOU"] ||
+        [name isContainsString:@"QICHEZULIN"] ||
+        [name isContainsString:@"TINGCHECHANG"] ||
+        [name isContainsString:@"QICHEPEIJIAN"] ||
+        [name isContainsString:@"CHESHI"] ||
+        [name isContainsString:@"QICHEBAOXIAN"])
+    {
+        return @"爱车";
+    }
+    else if ([name isContainsString:@"装修设计"] ||
+             [name isContainsString:@"建材"] ||
+             [name isContainsString:@"家具家居"] ||
+             [name isContainsString:@"家装卖场"] ||
+             [name isContainsString:@"家用电器"] ||
+             [name isContainsString:@"ZHUANGXIUSHEJI"] ||
+             [name isContainsString:@"JIANCAI"] ||
+             [name isContainsString:@"JIAJUZHUANGXIU"] ||
+             [name isContainsString:@"JIAZHUANGMAICHANG"] ||
+             [name isContainsString:@"JIAYONGDIANQI"] )
+    {
+        return @"家装";
+    }
+    else if ([name isContainsString:@"婚纱摄影"] ||
+             [name isContainsString:@"婚宴酒店"] ||
+             [name isContainsString:@"婚纱礼服"] ||
+             [name isContainsString:@"婚戒首饰"] ||
+             [name isContainsString:@"婚庆公司"] ||
+             [name isContainsString:@"婚车租赁"] ||
+             [name isContainsString:@"彩妆造型"] ||
+             [name isContainsString:@"婚礼小礼物"] ||
+             [name isContainsString:@"婚礼跟拍"] ||
+             [name isContainsString:@"个性写真"] ||
+             [name isContainsString:@"司仪主持"] ||
+             [name isContainsString:@"婚房装修"] ||
+             
+             [name isContainsString:@"HUNSHASHEYING"] ||
+             [name isContainsString:@"HUNYANJIUDIAN"] ||
+             [name isContainsString:@"HUNSHALIFU"] ||
+             [name isContainsString:@"HUNJIESHOUSHI"] ||
+             [name isContainsString:@"HUNQINGGONGSI"] ||
+             [name isContainsString:@"HUNCHEZULIN"] ||
+             [name isContainsString:@"CAIZHUANGZAOXING"] ||
+             [name isContainsString:@"HUNLIXIAOLIWU"] ||
+             [name isContainsString:@"HUNLIGENPAI"] ||
+             [name isContainsString:@"GEXINGXIEZHEN"] ||
+             [name isContainsString:@"SIYIZHUCHI"] ||
+             [name isContainsString:@"HUNFANGZHUANGXIU"])
+    {
+        return @"结婚";
+    }
+    else if ([name isContainsString:@"亲子游乐"] ||
+             [name isContainsString:@"亲子摄影"] ||
+             [name isContainsString:@"幼儿教育"] ||
+             [name isContainsString:@"亲子购物"] ||
+             [name isContainsString:@"孕妇写真"] ||
+             [name isContainsString:@"孕妇护理"] ||
+             
+             [name isContainsString:@"QINZIYOULE"] ||
+             [name isContainsString:@"QINZISHEYING"] ||
+             [name isContainsString:@"YOUERJIAOYU"] ||
+             [name isContainsString:@"QINZIGOUWU"] ||
+             [name isContainsString:@"YUNFUXIEZHEN"] ||
+             [name isContainsString:@"YUNFUHULI"] )
+    {
+        return @"亲子";
+    }
+    else if ([name isContainsString:@"卡丁车"] ||
+             [name isContainsString:@"健身中心"] ||
+             [name isContainsString:@"舞蹈"] ||
+             [name isContainsString:@"瑜伽"] ||
+             [name isContainsString:@"游泳馆"] ||
+             [name isContainsString:@"羽毛球"] ||
+             [name isContainsString:@"台球"] ||
+             [name isContainsString:@"高尔夫场"] ||
+             [name isContainsString:@"高尔夫球场"] ||
+             [name isContainsString:@"武术场馆"] ||
+             [name isContainsString:@"网球"] ||
+             [name isContainsString:@"马术场"] ||
+             [name isContainsString:@"篮球场"] ||
+             [name isContainsString:@"滑雪场"] ||
+             [name isContainsString:@"乒乓球馆"] ||
+             [name isContainsString:@"保龄球馆"] ||
+             [name isContainsString:@"体育场馆"] ||
+             [name isContainsString:@"足球场"] ||
+             
+             [name isContainsString:@"KADINGCHE"] ||
+             [name isContainsString:@"JIANSHENZHONGXIN"] ||
+             [name isContainsString:@"WUDAO"] ||
+             [name isContainsString:@"YUJIA"] ||
+             [name isContainsString:@"YOUYONGGUAN"] ||
+             [name isContainsString:@"YUMAOQIU"] ||
+             [name isContainsString:@"TAIQIU"] ||
+             [name isContainsString:@"GAO'ERFUCHANG"] ||
+             [name isContainsString:@"GAO'ERFUQIUCHANG"] ||
+             [name isContainsString:@"WUSHUCHANGGUAN"] ||
+             [name isContainsString:@"WANGQIU"] ||
+             [name isContainsString:@"MASHUCHANG"] ||
+             [name isContainsString:@"LANQIUCHANG"] ||
+             [name isContainsString:@"HUAXUECHANG"] ||
+             [name isContainsString:@"PINGPANGQIUGUAN"] ||
+             [name isContainsString:@"BAOLINGQIUGUAN"] ||
+             [name isContainsString:@"TIYUCHANGGUAN"] ||
+             [name isContainsString:@"ZUQIUCHANG"])
+    {
+        return @"运动健身";
+    }
+    else if ([name isContainsString:@"美发"] ||
+             [name isContainsString:@"舞蹈"] ||
+             [name isContainsString:@"瑜伽"] ||
+             [name isContainsString:@"美甲"] ||
+             [name isContainsString:@"化妆品"] ||
+             [name isContainsString:@"美容"] ||
+             [name isContainsString:@"整形"] ||
+             [name isContainsString:@"美瞳"] ||
+             [name isContainsString:@"齿科"] ||
+             [name isContainsString:@"个性写真"] ||
+             [name isContainsString:@"纹身"] ||
+             [name isContainsString:@"产后塑形"] ||
+             [name isContainsString:@"瘦身纤体"] ||
+             
+             [name isContainsString:@"MEIFA"] ||
+             [name isContainsString:@"WUDAO"] ||
+             [name isContainsString:@"YUJIA"] ||
+             [name isContainsString:@"MEIJIA"] ||
+             [name isContainsString:@"HUAZHUANGPIN"] ||
+             [name isContainsString:@"MEIRONG"] ||
+             [name isContainsString:@"ZHENGXING"] ||
+             [name isContainsString:@"MEITONG"] ||
+             [name isContainsString:@"CHEKE"] ||
+             [name isContainsString:@"GEXINGXIEZHEN"] ||
+             [name isContainsString:@"WENSHEN"] ||
+             [name isContainsString:@"CHANHOUSUXING"] ||
+             [name isContainsString:@"SHOUSHENXIANTI"])
+    {
+        return @"丽人";
+    }
+    else if ([name isContainsString:@"ktv"] ||
+             [name isContainsString:@"KTV"] ||
+             [name isContainsString:@"足疗"] ||
+             [name isContainsString:@"按摩"] ||
+             [name isContainsString:@"温泉"] ||
+             [name isContainsString:@"洗浴"] ||
+             [name isContainsString:@"景点"] ||
+             [name isContainsString:@"郊游"] ||
+             [name isContainsString:@"密室"] ||
+             [name isContainsString:@"网吧"] ||
+             [name isContainsString:@"网咖"] ||
+             [name isContainsString:@"diy手工坊"] ||
+             [name isContainsString:@"游乐"] ||
+             [name isContainsString:@"桌面游戏"] ||
+             [name isContainsString:@"真人cs"] ||
+             [name isContainsString:@"采摘"] ||
+             [name isContainsString:@"农家乐"] ||
+             [name isContainsString:@"文化艺术"] ||
+             [name isContainsString:@"棋牌室"] ||
+             [name isContainsString:@"公园"] ||
+             [name isContainsString:@"中医养"] ||
+             [name isContainsString:@"理发店"] ||
+             
+             [name isContainsString:@"ZULIAO"] ||
+             [name isContainsString:@"ANMO"] ||
+             [name isContainsString:@"WENQUAN"] ||
+             [name isContainsString:@"XIYU"] ||
+             [name isContainsString:@"JINGDIAN"] ||
+             [name isContainsString:@"JIAOYOU"] ||
+             [name isContainsString:@"MISHI"] ||
+             [name isContainsString:@"WANGBA"] ||
+             [name isContainsString:@"WANGKA"] ||
+             [name isContainsString:@"diySHOUGONGFANG"] ||
+             [name isContainsString:@"YOULE"] ||
+             [name isContainsString:@"ZHUOMIANYOUXI"] ||
+             [name isContainsString:@"ZHENRENcs"] ||
+             [name isContainsString:@"CAIZHAI"] ||
+             [name isContainsString:@"NONGJIALE"] ||
+             [name isContainsString:@"WENHUAYISHU"] ||
+             [name isContainsString:@"QIPAISHI"] ||
+             [name isContainsString:@"GONGYUAN"] ||
+             [name isContainsString:@"ZHONGYI"] ||
+             [name isContainsString:@"LIFADIAN"])
+    {
+        return @"休闲娱乐";
+    }
+    else if ([name isContainsString:@"超市"] ||
+             [name isContainsString:@"沃尔玛"] ||
+             [name isContainsString:@"家乐福"] ||
+             [name isContainsString:@"服饰鞋包"] ||
+             [name isContainsString:@"便利店"] ||
+             [name isContainsString:@"综合商场"] ||
+             [name isContainsString:@"花店"] ||
+             [name isContainsString:@"化妆品"] ||
+             [name isContainsString:@"药店"] ||
+             [name isContainsString:@"眼镜店"] ||
+             [name isContainsString:@"亲子购物"] ||
+             [name isContainsString:@"珠宝饰品"] ||
+             [name isContainsString:@"书店"] ||
+             [name isContainsString:@"运动户外"] ||
+             [name isContainsString:@"数码产品"] ||
+             [name isContainsString:@"特色集市"] ||
+             [name isContainsString:@"品牌折扣店"] ||
+             [name isContainsString:@"家居建材"] ||
+             [name isContainsString:@"食品"] ||
+             [name isContainsString:@"办公用品"] ||
+             [name isContainsString:@"文化用品"] ||
+             [name isContainsString:@"京味儿购物"]||
+             [name isContainsString:@"茶道"] ||
+             
+             [name isContainsString:@"CHAOSHI"] ||
+             [name isContainsString:@"WO'ERMA"] ||
+             [name isContainsString:@"JIALEFU"] ||
+             [name isContainsString:@"FUSHIXIEBAO"] ||
+             [name isContainsString:@"BIANLIDIAN"] ||
+             [name isContainsString:@"ZONGHESHANGCHANG"] ||
+             [name isContainsString:@"HUADIAN"] ||
+             [name isContainsString:@"HUAZHUANGPIN"] ||
+             [name isContainsString:@"YAODIAN"] ||
+             [name isContainsString:@"YANJINGDIAN"] ||
+             [name isContainsString:@"QINZIGOUWU"] ||
+             [name isContainsString:@"ZUBAOSHOUSHI"] ||
+             [name isContainsString:@"SHUDIAN"] ||
+             [name isContainsString:@"YONGDONGHUWAI"] ||
+             [name isContainsString:@"SHUMACHANPIN"] ||
+             [name isContainsString:@"RESEJISHI"] ||
+             [name isContainsString:@"PINPAIZHEKOUDIAN"] ||
+             [name isContainsString:@"JIAJUJIANCAI"] ||
+             [name isContainsString:@"SHIPIN"] ||
+             [name isContainsString:@"BANGONGYONGPIN"] ||
+             [name isContainsString:@"WENHUAYONGPIN"] ||
+             [name isContainsString:@"JINGWEI'ERGOUWU"]||
+             [name isContainsString:@"CHADAO"])
+    {
+        return @"购物";
+    }
+    else if ([name isContainsString:@"银行"] ||
+             [name isContainsString:@"理发店"] ||
+             [name isContainsString:@"宠物"] ||
+             [name isContainsString:@"快照"] ||
+             [name isContainsString:@"冲印"] ||
+             [name isContainsString:@"医院"] ||
+             [name isContainsString:@"洗衣店"] ||
+             [name isContainsString:@"家政"] ||
+             [name isContainsString:@"电信营业厅"] ||
+             
+             [name isContainsString:@"培训"] ||
+             [name isContainsString:@"齿科"] ||
+             [name isContainsString:@"体检中心"] ||
+             [name isContainsString:@"售票点"] ||
+             [name isContainsString:@"奢侈品护理"] ||
+             [name isContainsString:@"旅行社"] ||
+             [name isContainsString:@"物流快递"] ||
+             [name isContainsString:@"居家维修"] ||
+             [name isContainsString:@"学校"] ||
+             [name isContainsString:@"房屋地产"] ||
+             [name isContainsString:@"小区"] ||
+             [name isContainsString:@"交通"] ||
+             [name isContainsString:@"公司"]||
+             [name isContainsString:@"企业"] ||
+             [name isContainsString:@"网站"] ||
+             [name isContainsString:@"商务楼"] ||
+             
+             [name isContainsString:@"YINHANG"] ||
+             [name isContainsString:@"LIFADIAN"] ||
+             [name isContainsString:@"CHONGWU"] ||
+             [name isContainsString:@"KUAIZHAO"] ||
+             [name isContainsString:@"CHONGYIN"] ||
+             [name isContainsString:@"YIYUAN"] ||
+             [name isContainsString:@"XIYIDIAN"] ||
+             [name isContainsString:@"JIAZHENG"] ||
+             [name isContainsString:@"DIANXINYINGYETING"] ||
+             
+             [name isContainsString:@"PEIXUN"] ||
+             [name isContainsString:@"CHIKE"] ||
+             [name isContainsString:@"TIYANZHONGXIN"] ||
+             [name isContainsString:@"SHOUPIAODIAN"] ||
+             [name isContainsString:@"SHECHIPINHULI"] ||
+             [name isContainsString:@"LIXINGSHE"] ||
+             [name isContainsString:@"WULIUKUAIDI"] ||
+             [name isContainsString:@"JUJIAWEIXIU"] ||
+             [name isContainsString:@"XUEXIAO"] ||
+             [name isContainsString:@"FANGDICHAN"] ||
+             [name isContainsString:@"XIAOQU"] ||
+             [name isContainsString:@"JIAOTONG"] ||
+             [name isContainsString:@"GONGSI"]||
+             [name isContainsString:@"QIYE"] ||
+             [name isContainsString:@"WANGZHAN"] ||
+             [name isContainsString:@"SHANGWULOU"])
+    {
+        return @"生活服务";
+    }
+    else if ([name isContainsString:@"电影院"] ||
+             [name isContainsString:@"私人影院"] ||
+             
+             [name isContainsString:@"DIANYINGYUAN"] ||
+             [name isContainsString:@"SIRENYINGYUAN"])
+    {
+        return @"电影";
+    }else{
+        return @"美食";
+    }
+    return nil;
+}
+
 
 @end

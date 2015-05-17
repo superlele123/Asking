@@ -9,6 +9,12 @@
 #import "SpeechParseEngine.h"
 #import "WeatherTools.h"
 #import "AppDelegate.h"
+#import "DianPingTools.h"
+#import "DianPingKeyModel.h"
+
+
+
+
 
 @implementation SpeechParseEngine
 
@@ -182,9 +188,9 @@
         keyword=category;
     }
     
-    
+    //获得关键词
     if (keyword.length<=0) {
-        category=@"美食";
+        
         if (dic[@"semantic"][@"slots"][@"name"]) {
              keyword=dic[@"semantic"][@"slots"][@"name"];
         }else if(dic[@"semantic"][@"slots"][@"special"]){
@@ -194,7 +200,7 @@
         }
        
     }
-    
+    category=@"美食";
     
     
     
@@ -223,21 +229,90 @@
     
     return functionModel;
 }
-#pragma mark 解析自己的
+#pragma mark 自己做科大讯飞解析
 -(FunctionModel *)parseDianPing:(NSDictionary *)dic{
+    
+    
+    NSString *keyWord=dic[@"text"];
+    NSString *category=@"";
     
     AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication] delegate];
     FunctionModel *functionModel=[[FunctionModel alloc] init];
     functionModel.cityName=appDelegate.cityName;
     functionModel.type=FunctionTypeDianPing;
+   
+   
+    
+    if (keyWord!=nil) {
+        //通过关键词判断类型
+         category=[DianPingTools getCategory:keyWord];
+    }
+    //默认搜索美食
+    if (category==nil||category.length<=0) {
+        category=@"美食";
+    }
+    //获得关键词和地区
+    DianPingKeyModel *dianPingKeyModel=[self getKeyWordAndDistrict:keyWord];
+    keyWord=dianPingKeyModel.keyWord;
+    
+    
+    
     //点评Model
     DianPingModel *dianPingModel=[[DianPingModel alloc] init];
-    dianPingModel.coordinate2D=appDelegate.userLocation;
-    dianPingModel.category=@"美食";
-    dianPingModel.keyword=dic[@"text"];
+    //设置地图搜索还是附近搜索
+    if (dianPingKeyModel.district!=NULL&&dianPingKeyModel.district.length>=2) {
+         dianPingModel.district=dianPingKeyModel.district; //开发区名
+         dianPingModel.cityName=appDelegate.cityName;   //城市
+    }else{
+         dianPingModel.coordinate2D=appDelegate.userLocation;
+    }
+    
+   
+   
+    dianPingModel.category=category;
+    dianPingModel.keyword=keyWord;
     functionModel.dianPingModel=dianPingModel;
     
     return functionModel;
 }
+#pragma mark 获得地点和关键词
+-(DianPingKeyModel *)getKeyWordAndDistrict:(NSString *)text{
+    
+    DianPingKeyModel *dianping=[[DianPingKeyModel alloc] init];
+    
+    NSString *district=@""; //地点名
+    NSString *keyWord=@"";
+    
+    
+    NSRange range=[text rangeOfString:@"的"];
+    if (range.location!=NSNotFound&&range.length>0) { //找到"的"
+        //获得的前边的
+        if (range.location>=2) {
+            district=[text substringToIndex:range.location];
+        }
+        //去掉附近
+        if ([district isContainsString:@"附近"]) {
+            district=[district stringByReplacingOccurrencesOfString:@"附近" withString:@""];
+        }
+        
+        //获得的后边的
+        if (range.location+range.length<text.length) {
+            keyWord=[text substringFromIndex:range.location+range.length];
+        }
+    }else{
+        keyWord=text;
+    }
+    
+    dianping.keyWord=keyWord;
+    dianping.district=district;
+    return dianping;
+    
+    
+}
+
+
+
+
+
 
 @end
