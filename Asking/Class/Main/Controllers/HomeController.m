@@ -192,7 +192,7 @@ typedef enum {
     self.title=@"语音助手";
     self.view.backgroundColor=kChatBackColor;
     //1. 添加tableview
-    _mainTableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kpadding)];
+    _mainTableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-40)];
     _mainTableView.dataSource=self;
     _mainTableView.delegate=self;
     _mainTableView.separatorStyle=UITableViewCellSelectionStyleNone;
@@ -518,10 +518,23 @@ typedef enum {
         NSDictionary *json = [keyString JSONValue];
         //判断语音类型
         NSString *service= json[@"service"];
+        NSString *text=json[@"text"];
+        self.title=json[@"text"];
         
-        if (service==nil||[service isEqualToString:@"openQA"]) {
-            
-            NSString *text=json[@"text"];
+        if ([service isEqualToString:@"openQA"]) {
+//            //1. 显示语音信息
+//            MessageModel *newModel=[[MessageModel alloc] init];
+//            newModel.type=MessageBodyType_Text;
+//            newModel.isSender=YES;
+//            newModel.content=text;
+//            [_dataArray addObject:newModel];
+//            [_mainTableView reloadData];
+//            //1.1 滚动到底部
+//            NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:  _dataArray.count-1];
+//            [_mainTableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
+
+          
+        }else if (service==nil){
             NSRange newsRange=[text rangeOfString:@"新闻"];
             if (newsRange.length>0) {
                 self.title=text;
@@ -529,26 +542,21 @@ typedef enum {
                 MusicController *newsController =   [mainStoryBoard instantiateViewControllerWithIdentifier:@"NewsMainController"];
                 [self.navigationController pushViewController:newsController animated:YES];
                 return;
+            }else{
+                
+                 [self parseVoice:json];
             }
-            //1. 显示语音信息
-            MessageModel *newModel=[[MessageModel alloc] init];
-            newModel.type=MessageBodyType_Text;
-            newModel.isSender=YES;
-            newModel.content=text;
-            [_dataArray addObject:newModel];
-            [_mainTableView reloadData];
-            //1.1 滚动到底部
-            NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:  _dataArray.count-1];
-            [_mainTableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
-
         }else{
             //2. 解析语音结果
-            self.title=json[@"text"];
             [self parseVoice:json];
         }
+   
     }
     
 }
+    
+    
+    
 -(void) onError:(IFlySpeechError*) error
 {
     DLog(@"语音解析错误::%@",[error errorDesc]);
@@ -621,11 +629,17 @@ typedef enum {
                 [DianPingTools requestDianpingBy:functionModel.dianPingModel andPage:1 success:^(NSArray *businessArray) {
                     functionModel.dianPingModel.businessArray=businessArray;
                     
-                    [_dataArray addObject:functionModel];
-                    [_mainTableView reloadData];
-                    //滚动到底部
-                    NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_dataArray.count-1];
-                    [_mainTableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
+                    if (businessArray.count>=3) {
+                        [_dataArray addObject:functionModel];
+                        [_mainTableView reloadData];
+                        //滚动到底部
+                        NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:_dataArray.count-1];
+                        [_mainTableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
+                    }else{
+                        [self clickDianPingMoreBtn:functionModel];
+                    }
+                    
+                   
                 } andFailure:^(NSError *error) {
                      DLog(@"%@",error);
                 }];

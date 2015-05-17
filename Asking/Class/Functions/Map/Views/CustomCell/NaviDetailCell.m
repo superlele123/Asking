@@ -90,6 +90,8 @@
         imageName=@"map_route_turn_right_side";
     }else if ([@"直行" isEqualToString:action]) {
         imageName=@"map_route_turn_front";
+    }else if ([@"减速行驶" isEqualToString:action]) {
+        imageName=@"map_route_turn_front";
     }else if (action.length==0){
         imageName=@"map_route_turn_undefine";
        

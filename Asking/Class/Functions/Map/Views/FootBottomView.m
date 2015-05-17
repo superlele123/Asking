@@ -37,22 +37,23 @@
         
         //添加WebView
         CGFloat labelWidth=size.width*kLabelScale;
-        
-        webView=[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, labelWidth, 55)];
+        webView.userInteractionEnabled=NO;
+        webView=[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, size.width, 55)];
         webView.scrollView.scrollEnabled=NO;
         [self addSubview:webView];
         
         //添加详情按钮
         
-        UIImageView *detailImageView=[[UIImageView alloc] initWithFrame:CGRectMake(size.width-47/2.f-2*kPadding, kPadding,47/2.f ,69/2.f )];
-        [detailImageView setImage:[UIImage imageNamed:@"poi_card_detail_icon"]];
+        UIButton *detailImageView=[[UIButton alloc] initWithFrame:CGRectMake(size.width-47/2.f-2*kPadding, kPadding,47/2.f ,69/2.f )];
+        [detailImageView setImage:[UIImage imageNamed:@"poi_card_detail_icon"] forState:UIControlStateNormal];
         [self addSubview:detailImageView];
+        [detailImageView addTarget:self action:@selector(tapDetail:) forControlEvents:UIControlEventTouchDown];
         
        
-        //添加单击事件
-        UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapDetail:)];
-
-        [self addGestureRecognizer:tapGesture];
+//        //添加单击事件
+//        UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapDetail:)];
+//
+//        [self addGestureRecognizer:tapGesture];
         
         
     }

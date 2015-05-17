@@ -28,6 +28,9 @@
      _dataSource=businessArray;
     self.title=@"美食";
     
+    
+    self.tableView.tableFooterView=[[UIView alloc] init];
+    
     //设置按钮字体
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@"返回"

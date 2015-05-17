@@ -207,7 +207,7 @@
         _weatherIcon.image=[UIImage imageNamed:@"retina_snowshower"];
     }else if ([weatherDes isEqualToString:@"多云转晴"]){
         _weatherIcon.image=[UIImage imageNamed:@"retina_cloud"];
-    }else if ([weatherDes isEqualToString:@"阴转多云"]){
+    }else if ([weatherDes isEqualToString:@"阴转多云"]||[weatherDes isEqualToString:@"多云转阴"]){
         _weatherIcon.image=[UIImage imageNamed:@"retina_cloudy"];
     }else if ([weatherDes isEqualToString:@"晴转多云"]){
         _weatherIcon.image=[UIImage imageNamed:@"retina_cloudy"];

@@ -47,6 +47,7 @@
     
     
     [params setObject:dianPingModel.category forKey:@"category"];
+    [params setObject:dianPingModel.keyword forKey:@"keyword"];
     [params setObject:[NSString stringWithFormat:@"%d",page] forKey:@"page"];
     
     

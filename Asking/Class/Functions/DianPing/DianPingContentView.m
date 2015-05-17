@@ -86,7 +86,7 @@
 
 -(void)setFunctionModel:(FunctionModel *)model{
     
-    if (model.dianPingModel.businessArray.count>3) {
+    if (model.dianPingModel.businessArray.count>=3) {
          firstDianPingView.business=model.dianPingModel.businessArray[0];
          secondDianPingView.business=model.dianPingModel.businessArray[1];
          thirdDianPingView.business=model.dianPingModel.businessArray[2];

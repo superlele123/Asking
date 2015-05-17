@@ -20,5 +20,7 @@
 
 ///商铺数组
 @property (nonatomic,strong) NSArray *businessArray;
+///关键词
+@property (nonatomic,copy) NSString *keyword;
 
 @end

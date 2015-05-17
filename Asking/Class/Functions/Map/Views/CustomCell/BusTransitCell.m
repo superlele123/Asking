@@ -69,6 +69,7 @@
         //4.添加详情WebView
         detailWebView=[[UIWebView alloc] init];
         detailWebView.scrollView.scrollEnabled=NO;
+        
         [self addSubview:detailWebView];
         
         
@@ -123,7 +124,7 @@
 
         CGFloat webViewX=segmentTitleLabel.frame.origin.x;
         CGFloat webViewY=CGRectGetMaxY(segmentTitleLabel.frame);
-        CGFloat webViewW=segmentTitleLabel.frame.size.width;
+        CGFloat webViewW=kScreenWidth;
         detailWebView.frame=CGRectMake(webViewX, webViewY, webViewW, height-2*kPadding-kTitleH);
         //1.2 获得上下站名字
         NSString *turnOnStr,*turnOffStr;
@@ -158,7 +159,7 @@
         if (ifShowMore) {  //显示详情
             CGFloat webViewX=segmentTitleLabel.frame.origin.x;
             CGFloat webViewY=CGRectGetMaxY(segmentTitleLabel.frame);
-            CGFloat webViewW=segmentTitleLabel.frame.size.width;
+            CGFloat webViewW=kScreenWidth;
             
             detailWebView=[[UIWebView alloc] init];
             detailWebView.scrollView.scrollEnabled=NO;

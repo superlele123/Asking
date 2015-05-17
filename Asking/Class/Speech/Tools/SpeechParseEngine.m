@@ -32,7 +32,7 @@
     }else if ([@"news" isEqualToString:service]){
         model=[self parseNews:dic];
     }else{
-        return nil;
+         model=[self parseDianPing:dic];
     }
 
     return model;
@@ -174,11 +174,29 @@
         cityName=appDelegate.cityName;
     }
     //获得分类
-    NSString *category=dic[@"semantic"][@"slots"][@"category"];
-    
-    if (category.length<=0) {
-        category=dic[@"semantic"][@"slots"][@"name"];
+    NSString *category=@"";
+    NSString *keyword=@"";
+    //有分类
+    if (dic[@"semantic"][@"slots"][@"category"]) {
+        category=dic[@"semantic"][@"slots"][@"category"];
+        keyword=category;
     }
+    
+    
+    if (keyword.length<=0) {
+        category=@"美食";
+        if (dic[@"semantic"][@"slots"][@"name"]) {
+             keyword=dic[@"semantic"][@"slots"][@"name"];
+        }else if(dic[@"semantic"][@"slots"][@"special"]){
+             keyword=dic[@"semantic"][@"slots"][@"special"];
+        }else{
+            keyword=@"";
+        }
+       
+    }
+    
+    
+    
     
     
     FunctionModel *functionModel=[[FunctionModel alloc] init];
@@ -188,6 +206,7 @@
     DianPingModel *dianPingModel=[[DianPingModel alloc] init];
     dianPingModel.cityName=cityName;
     dianPingModel.category=category;
+    dianPingModel.keyword=keyword;
     functionModel.dianPingModel=dianPingModel;
     
     if (![@"CURRENT_POI" isEqualToString:poi]) { //当前区域
@@ -201,6 +220,22 @@
     }else{
         dianPingModel.coordinate2D=appDelegate.userLocation;
     }
+    
+    return functionModel;
+}
+#pragma mark 解析自己的
+-(FunctionModel *)parseDianPing:(NSDictionary *)dic{
+    
+    AppDelegate *appDelegate=(AppDelegate *)[[UIApplication sharedApplication] delegate];
+    FunctionModel *functionModel=[[FunctionModel alloc] init];
+    functionModel.cityName=appDelegate.cityName;
+    functionModel.type=FunctionTypeDianPing;
+    //点评Model
+    DianPingModel *dianPingModel=[[DianPingModel alloc] init];
+    dianPingModel.coordinate2D=appDelegate.userLocation;
+    dianPingModel.category=@"美食";
+    dianPingModel.keyword=dic[@"text"];
+    functionModel.dianPingModel=dianPingModel;
     
     return functionModel;
 }
