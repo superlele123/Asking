@@ -831,7 +831,7 @@ typedef enum {
     UITextField *searchField=[[UITextField alloc] init];
     searchField.bounds=CGRectMake(0, 0, kScreenWidth-50, 40);
     searchField.center=CGPointMake(self.view.center.x, 200);
-    searchField.placeholder=@"搜索你的问题";
+    searchField.placeholder=@"输入你的问题";
     searchField.backgroundColor=[UIColor whiteColor];
     searchField.layer.masksToBounds=YES;
     searchField.layer.cornerRadius=20.f;
