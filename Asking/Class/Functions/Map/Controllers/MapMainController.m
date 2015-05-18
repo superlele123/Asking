@@ -590,7 +590,7 @@ typedef enum{
             }
             
             /* 缩放地图使其适应polylines的展示. */
-            [_mapView setVisibleMapRect:[CommonUtility mapRectForOverlays:polylinesArray] edgePadding:UIEdgeInsetsMake(180, 50, 150, 50) animated:YES];
+            [_mapView setVisibleMapRect:[CommonUtility mapRectForOverlays:polylinesArray] edgePadding:UIEdgeInsetsMake(240, 100, 200, 100) animated:YES];
             //添加起点终点两个锚点
             [self addStartAndEndAnnotation];
             
@@ -624,7 +624,7 @@ typedef enum{
     }
     
     /* 1.4 缩放地图使其适应polylines的展示. */
-    [_mapView setVisibleMapRect:[CommonUtility mapRectForOverlays:polylinesArray] edgePadding:UIEdgeInsetsMake(170, 40, 150, 40) animated:YES];
+    [_mapView setVisibleMapRect:[CommonUtility mapRectForOverlays:polylinesArray] edgePadding:UIEdgeInsetsMake(220, 100, 220, 100) animated:YES];
     //1.5 添加起点终点两个锚点
     [self addStartAndEndAnnotation];
 

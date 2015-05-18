@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "iflyMSC/IFlyDataUploader.h"
 #import "iflyMSC/IFlyContact.h"
+#import "iflyMSC/IFlyTextUnderstander.h"
 
 
 #import "MBProgressHUD.h"
@@ -41,7 +42,7 @@ typedef enum {
 }RotateState;
 
 
-@interface HomeController ()<UITableViewDataSource,UITableViewDelegate,IFlySpeechRecognizerDelegate,CustomeSpeechDelegate,FunctionCellCardDelegate,MusicPlayerDelegate>
+@interface HomeController ()<UITableViewDataSource,UITableViewDelegate,IFlySpeechRecognizerDelegate,CustomeSpeechDelegate,FunctionCellCardDelegate,MusicPlayerDelegate,UITextFieldDelegate>
 {
     ///
     UITableView *_mainTableView;
@@ -56,6 +57,9 @@ typedef enum {
     MBProgressHUD *_hud;
     ///语音识别
     IFlySpeechUnderstander *_iFlySpeechUnderstander;
+    ///文字解析
+    IFlyTextUnderstander *_iFlyTextUnderstander;
+    
     ///数据源
     NSMutableArray *_dataArray;
     ///蒙版
@@ -71,6 +75,10 @@ typedef enum {
     ///当前播放歌曲
     Song *_currentSong;
     MusicPlayerManager *audioManager;
+    
+    
+    //输入框页面
+    UIView *_searchSongView;
     
 }
 
@@ -90,6 +98,11 @@ typedef enum {
     
     
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -143,7 +156,8 @@ typedef enum {
     audioManager=[MusicPlayerManager sharedManager];
     audioManager.delegate=self;
     //注册远程控制
-    [self becomeFirstResponder];
+     [self resignFirstResponder];
+    
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     AVAudioSession *session=[AVAudioSession sharedInstance];
     NSError *activeError=nil;
@@ -518,34 +532,11 @@ typedef enum {
         NSDictionary *json = [keyString JSONValue];
         //判断语音类型
         NSString *service= json[@"service"];
-        NSString *text=json[@"text"];
+       
         self.title=json[@"text"];
         
         if ([service isEqualToString:@"openQA"]) {
-//            //1. 显示语音信息
-//            MessageModel *newModel=[[MessageModel alloc] init];
-//            newModel.type=MessageBodyType_Text;
-//            newModel.isSender=YES;
-//            newModel.content=text;
-//            [_dataArray addObject:newModel];
-//            [_mainTableView reloadData];
-//            //1.1 滚动到底部
-//            NSIndexPath* ipath = [NSIndexPath indexPathForRow:0 inSection:  _dataArray.count-1];
-//            [_mainTableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
-
           
-        }else if (service==nil){
-            NSRange newsRange=[text rangeOfString:@"新闻"];
-            if (newsRange.length>0) {
-                self.title=text;
-                UIStoryboard *mainStoryBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                MusicController *newsController =   [mainStoryBoard instantiateViewControllerWithIdentifier:@"NewsMainController"];
-                [self.navigationController pushViewController:newsController animated:YES];
-                return;
-            }else{
-                
-                 [self parseVoice:json];
-            }
         }else{
             //2. 解析语音结果
             [self parseVoice:json];
@@ -566,6 +557,24 @@ typedef enum {
 #pragma mark  - 处理语音
 #pragma mark 处理语音
 -(void)parseVoice:(NSDictionary *)result{
+    
+    
+    NSString*text=result[@"text"];
+    NSRange newsRange=[text rangeOfString:@"新闻"];
+    if (newsRange.length>0) {
+        self.title=text;
+        UIStoryboard *mainStoryBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MusicController *newsController =   [mainStoryBoard instantiateViewControllerWithIdentifier:@"NewsMainController"];
+        [self.navigationController pushViewController:newsController animated:YES];
+        return;
+    }
+    
+    
+    
+    
+    
+    
+    
     //解析返回的结果
     SpeechParseEngine *engine=[[SpeechParseEngine alloc] init];
     id model=[engine parseSpeechByDictionary:result];
@@ -768,6 +777,123 @@ typedef enum {
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:mediaDict];
    
 }
+#pragma mark - 摇一摇功能
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    
+    if (motion == UIEventSubtypeMotionShake) {
+       
+        
+        if (_searchSongView==nil) {
+            _searchSongView=[self searchView];
+        }
+        
+        [self.view addSubview:_searchSongView];
+        self.navigationController.navigationBarHidden=YES;
+        
+    }
+}
+
+
+
+
+#pragma mark searchView
+-(UIView *)searchView{
+    
+    UIView *searchView=[[UIView alloc] initWithFrame:self.view.bounds];
+    
+    //添加毛玻璃效果
+    UIVisualEffectView *visualEfView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    visualEfView.frame = self.view.bounds;
+    visualEfView.alpha = 0.85f;
+    [searchView addSubview:visualEfView];
+    //添加搜索框
+    UITextField *searchField=[self searchTextField];
+    [searchView addSubview:searchField];
+    
+    //添加手势识别
+    UITapGestureRecognizer *tapGestureRecognizer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchOk:)];
+    [searchView addGestureRecognizer:tapGestureRecognizer];
+    
+    return searchView;
+}
+
+
+#pragma mark textField
+
+-(UITextField *)searchTextField{
+    
+    //搜索框
+    UITextField *searchField=[[UITextField alloc] init];
+    searchField.bounds=CGRectMake(0, 0, kScreenWidth-50, 40);
+    searchField.center=CGPointMake(self.view.center.x, 200);
+    searchField.placeholder=@"搜索你的问题";
+    searchField.backgroundColor=[UIColor whiteColor];
+    searchField.layer.masksToBounds=YES;
+    searchField.layer.cornerRadius=20.f;
+    searchField.clearButtonMode = UITextFieldViewModeWhileEditing;  //清楚按钮
+    searchField.returnKeyType =UIReturnKeySearch;  //键盘回车键类型
+    searchField.delegate=self;
+    searchField.clearsOnBeginEditing = YES;
+    
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 40)];
+    searchField.leftView = paddingView;
+    searchField.leftViewMode = UITextFieldViewModeAlways;
+    return searchField;
+    
+}
+#pragma mark TextFild 代理
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];    //主要是[receiver resignFirstResponder]在哪调用就能把receiver对应的键盘往下收
+    [_searchSongView removeFromSuperview];
+    self.navigationController.navigationBarHidden=NO;
+    
+    //搜索歌曲
+    NSString *searchKey=textField.text;
+    if (searchKey.length>0) {
+        textField.text=@"";
+        [self parseTextWithText:searchKey];
+//        [self searchSong:searchKey];
+    }
+    return YES;
+}
+
+
+
+
+#pragma mark 点击搜索页面 去除searchview
+-(void)searchOk:(UITapGestureRecognizer *)tapGestureRecognizer{
+    if (tapGestureRecognizer.state==UIGestureRecognizerStateEnded) {
+        [_searchSongView removeFromSuperview];
+         self.navigationController.navigationBarHidden=NO;
+    }
+    
+}
+
+#pragma mark - 文字解析
+-(void)buildTextUnderstander{
+    
+    if (_iFlyTextUnderstander==nil) {
+        _iFlyTextUnderstander=[[IFlyTextUnderstander alloc] init];
+    }
+}
+
+-(void)parseTextWithText:(NSString *)text{
+    //创建文本解析器
+    [self buildTextUnderstander];
+    [_iFlyTextUnderstander understandText:text withCompletionHandler:^(NSString *result, IFlySpeechError *error) {
+       
+        NSDictionary *resultDic=[result JSONValue];
+        [self parseVoice:resultDic];
+        
+    }];
+
+}
+
 
 
 

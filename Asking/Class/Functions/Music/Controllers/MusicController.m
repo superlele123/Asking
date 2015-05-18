@@ -365,9 +365,9 @@
 #pragma mark 修改播放键图片
 -(void)updatePlayButtonImage:(STKAudioPlayerState)state{
     if (state==STKAudioPlayerStatePlaying) {
-        [self.playButton setImage:[UIImage imageNamed:@"playing_btn_play_n"] forState:UIControlStateNormal];
-    }else if (state==STKAudioPlayerStatePaused){
         [self.playButton setImage:[UIImage imageNamed:@"playing_btn_pause_n"] forState:UIControlStateNormal];
+    }else if (state==STKAudioPlayerStatePaused){
+        [self.playButton setImage:[UIImage imageNamed:@"playing_btn_play_n"] forState:UIControlStateNormal];
         if (_songTimer.isValid) {
             [_songTimer invalidate];
             _songTimer = nil;
