@@ -271,7 +271,9 @@
     
     //设置锁屏后的图片
     UIImage *lockImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:song.cover]]];
-    
+    if(lockImage==nil){
+        lockImage=[UIImage imageNamed:@"icon"];
+    }
     MPMediaItemArtwork  *artwork=[[MPMediaItemArtwork alloc] initWithImage:lockImage];
     NSDictionary *mediaDict=@{
                               MPMediaItemPropertyTitle:song.songName,

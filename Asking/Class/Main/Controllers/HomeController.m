@@ -478,14 +478,14 @@ typedef enum {
     return 5;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 5;
+    return 10;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 5)];
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5)];
     return view;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 5)];
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 10)];
 }
 
 
@@ -617,15 +617,18 @@ typedef enum {
                     
                     if (musicModel.songArray.count>0) {
                         
-                        //0.播放音乐
-                        [audioManager.musicPlayer clearQueue];
-                        [audioManager.musicPlayer pause];
-                        rotateState=RotateStateStop;
+//                        //0.播放音乐
+//                        [audioManager.musicPlayer clearQueue];
+//                        [audioManager.musicPlayer pause];
+//                        rotateState=RotateStateStop;
                         audioManager.musicArray=musicModel.songArray;
-                        [audioManager play];
+//                        [audioManager play];
                         
+                        [audioManager playNextSong];
+
                         //1.添加RightBarButtonItem
                         [self buildBarButtonItem];
+                        
                     }else{
                        
                     }
@@ -756,26 +759,36 @@ typedef enum {
         [self stopRotateAnimate];
         
     }else if (state==STKAudioPlayerStatePlaying){
-        [self rotateImageViewAnimate];
+        if (rotateState==RotateStateStop) {
+            [self rotateImageViewAnimate];
+        }
+        
     }
 }
 -(void)setBackPlayParames:(Song *)song{
     
     //设置锁屏后的图片
     UIImage *lockImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:song.cover]]];
+    if(lockImage==nil){
+        lockImage=[UIImage imageNamed:@"icon"];
+    }
     
-    MPMediaItemArtwork  *artwork=[[MPMediaItemArtwork alloc] initWithImage:lockImage];
-    NSDictionary *mediaDict=@{
-                              MPMediaItemPropertyTitle:song.songName,
-                              MPMediaItemPropertyMediaType:@(MPMediaTypeAnyAudio),
-                              MPMediaItemPropertyPlaybackDuration:@(audioManager.musicPlayer.duration),
-                              MPNowPlayingInfoPropertyPlaybackRate:@1.0,
-                              MPNowPlayingInfoPropertyElapsedPlaybackTime:@(audioManager.musicPlayer.progress),
-                              MPMediaItemPropertyAlbumArtist:song.artist,
-                              MPMediaItemPropertyArtist:song.artist,
-                              MPMediaItemPropertyArtwork:artwork};
-    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:mediaDict];
-   
+    if(lockImage){
+        MPMediaItemArtwork  *artwork=[[MPMediaItemArtwork alloc] initWithImage:lockImage];
+        NSDictionary *mediaDict=@{
+                                  MPMediaItemPropertyTitle:song.songName,
+                                  MPMediaItemPropertyMediaType:@(MPMediaTypeAnyAudio),
+                                  MPMediaItemPropertyPlaybackDuration:@(audioManager.musicPlayer.duration),
+                                  MPNowPlayingInfoPropertyPlaybackRate:@1.0,
+                                  MPNowPlayingInfoPropertyElapsedPlaybackTime:@(audioManager.musicPlayer.progress),
+                                  MPMediaItemPropertyAlbumArtist:song.artist,
+                                  MPMediaItemPropertyArtist:song.artist,
+                                  MPMediaItemPropertyArtwork:artwork};
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:mediaDict];
+
+    }
+    
+    
 }
 #pragma mark - 摇一摇功能
 -(BOOL)canBecomeFirstResponder
